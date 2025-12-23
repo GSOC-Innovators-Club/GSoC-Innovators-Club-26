@@ -1,0 +1,147 @@
+.footer {
+    position: relative;
+    width: 100%;
+    background: rgba(112, 112, 112, 0.1);
+    backdrop-filter: blur(34px);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 0 45px;
+}
+
+.footer-container {
+    max-width: 1128px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer Top */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-xl) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer Brand */
+.footer-brand-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* Footer Right Section */
+.footer-brand-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+
+.footer-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.footer-brand-name {
+    font-family: var(--font-brand);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--color-text-primary);
+    white-space: pre-line;
+    line-height: 1.1;
+}
+
+/* Social Media */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.social-link img {
+    width: 32px;
+    height: 32px;
+}
+
+
+/* VIT Logo in Footer */
+.footer-vitb-logo {
+    height: 96px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 55px 0;
+}
+
+.footer-copyright {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .footer {
+        padding: 0 var(--spacing-lg);
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .footer-brand {
+        align-items: center;
+    }
+
+    .footer-right {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-nav {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+}

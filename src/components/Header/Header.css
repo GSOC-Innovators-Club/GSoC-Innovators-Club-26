@@ -1,0 +1,107 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: var(--spacing-md) 0;
+}
+
+.navbar {
+    max-width: 1152px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(112, 112, 122, 0.1);
+    backdrop-filter: blur(34px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-sm);
+}
+
+/* Branding */
+.branding {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.club-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.brand-name {
+    font-family: var(--font-brand);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    color: var(--color-text-primary);
+    white-space: pre-line;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--color-text-secondary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-separator {
+    color: var(--color-text-muted);
+    font-size: 14px;
+}
+
+/* VIT Logo */
+.vitb-logo {
+    height: 56px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .club-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .brand-name {
+        font-size: 18px;
+    }
+
+    .vitb-logo {
+        height: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+
+    .vitb-logo {
+        height: 60px;
+    }
+}
