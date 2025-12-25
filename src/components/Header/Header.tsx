@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const navLinks = [
-    { label: 'Team', href: '#team' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Events', href: '#events' },
-    { label: 'Follow Us', href: '#follow' },
+    { label: 'Team', href: '/team', isRoute: true },
+    { label: 'Projects', href: '#projects', isRoute: false },
+    { label: 'Events', href: '#events', isRoute: false },
+    { label: 'Follow Us', href: '#follow', isRoute: false },
 ];
 
 export function Header() {
@@ -13,23 +14,31 @@ export function Header() {
             <nav className="navbar">
                 {/* Club Branding */}
                 <div className="branding">
-                    <img
-                        src="/Logos/ClubLogo.png"
-                        alt="GSoC Innovators Club Logo"
-                        className="club-logo"
-                    />
-                    <span className="brand-name">
+                    <Link to="/">
+                        <img
+                            src="/Logos/ClubLogo.png"
+                            alt="GSoC Innovators Club Logo"
+                            className="club-logo"
+                        />
+                    </Link>
+                    <Link to="/" className="brand-name">
                         GSoC{'\n'}Innovators{'\n'}Club
-                    </span>
+                    </Link>
                 </div>
 
                 {/* Navigation Links */}
                 <div className="navigation">
                     {navLinks.map((link, index) => (
                         <div key={link.label} style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                            <a href={link.href} className="nav-link">
-                                {link.label}
-                            </a>
+                            {link.isRoute ? (
+                                <Link to={link.href} className="nav-link">
+                                    {link.label}
+                                </Link>
+                            ) : (
+                                <a href={link.href} className="nav-link">
+                                    {link.label}
+                                </a>
+                            )}
                             {index < navLinks.length - 1 && (
                                 <span className="nav-separator">//</span>
                             )}
@@ -47,3 +56,4 @@ export function Header() {
         </header>
     );
 }
+
