@@ -13,6 +13,9 @@ A modern, immersive landing page for the GSoC Innovators Club, designed to attra
 - **Dynamic UI Elements**: Text content and floating cards in the hero section fade out smoothly as the scroll animation progresses.
 - **About Us Section**: Informative cards with statistics and custom purple-themed icons.
 - **Events Section**: Clean and modern display of upcoming events and challenges.
+- **Team Page**: A dedicated page showcasing the team members, grouped by department.
+- **Events Page**: A full page displaying past and upcoming events in a vertical timeline.
+- **Client-Side Routing**: Seamless navigation between pages using React Router.
 - **Responsive Design**: Fully responsive layout that adapts to different screen sizes.
 
 ## 🛠️ Tech Stack
@@ -32,8 +35,13 @@ src/
 │   ├── EventsSection/    # Events list and styling
 │   ├── Footer/          # Multi-column footer with branding
 │   ├── Header/          # Sticky navigation bar
-│   └── HeroSection/     # Three.js Nebula, scroll hook, and hero content
-├── App.tsx              # Main application entry point
+│   ├── HeroSection/     # Three.js Nebula, scroll hook, and hero content
+│   └── TeamMemberCard/  # Reusable card component for team members
+├── pages/
+│   ├── EventsPage.tsx   # Dedicated Events page
+│   ├── HomePage.tsx     # Main landing page
+│   └── TeamPage.tsx     # Team overview page
+├── App.tsx              # Main application entry point with Routing
 ├── main.tsx             # React DOM mounting
 └── index.css            # Global design tokens and base styles
 ```
