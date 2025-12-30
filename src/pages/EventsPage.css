@@ -1,4 +1,4 @@
-.team-page {
+.events-page {
     position: relative;
     min-height: 100vh;
     background-color: #0e0c15;
@@ -8,7 +8,7 @@
 }
 
 /* Background Gradient */
-.team-bg-gradient {
+.events-bg-gradient {
     position: fixed;
     top: 0;
     left: 50%;
@@ -24,41 +24,41 @@
     mask-image: radial-gradient(circle at center, black 30%, transparent 45%);
 }
 
-.team-bg-gradient img {
+.events-bg-gradient img {
     width: 100%;
     height: auto;
 }
 
 /* Container */
-.team-container {
+.events-page-container {
     position: relative;
     z-index: 1;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 40px;
 }
 
 /* Header Section */
-.team-header {
+.events-page-header {
     text-align: center;
     margin-bottom: 60px;
 }
 
-.team-title {
+.events-page-title {
     font-family: var(--font-heading);
     font-size: 56px;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
-.team-title .highlight {
+.events-page-title .highlight {
     background: linear-gradient(135deg, #008BFF 0%, #FF00B8 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.team-subtitle {
+.events-page-subtitle {
     font-family: var(--font-body);
     font-size: 18px;
     color: var(--color-text-secondary);
@@ -67,81 +67,45 @@
     line-height: 1.6;
 }
 
-/* Department Sections */
-.team-sections {
+/* Events List */
+.events-list {
     display: flex;
     flex-direction: column;
-    gap: 80px;
-}
-
-.department-section {
-    display: flex;
-    flex-direction: column;
+    gap: 48px;
     align-items: center;
-    gap: 40px;
 }
 
-.department-title {
-    font-family: var(--font-heading);
-    font-size: 32px;
-    font-weight: 600;
-    color: var(--color-accent-purple);
-    text-align: center;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-/* Optional: Add a small underline or decoration if desired, kept simple for now per image but accented color */
-
-.department-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 32px;
-    justify-items: center;
-    width: 100%;
+/* Override event card for page layout */
+.events-page .event-card {
+    scroll-snap-align: none;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .team-title {
+    .events-page-title {
         font-size: 48px;
-    }
-
-    .department-grid {
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 24px;
     }
 }
 
 @media (max-width: 768px) {
-    .team-page {
+    .events-page {
         padding-top: 100px;
     }
 
-    .team-title {
+    .events-page-title {
         font-size: 36px;
     }
 
-    .team-subtitle {
+    .events-page-subtitle {
         font-size: 16px;
         padding: 0 16px;
     }
 
-    .team-container {
+    .events-page-container {
         padding: 0 20px;
     }
 
-    .team-sections {
-        gap: 60px;
-    }
-
-    .department-title {
-        font-size: 24px;
-    }
-
-    .department-grid {
-        grid-template-columns: 1fr;
-        max-width: 320px;
-        margin: 0 auto;
+    .events-list {
+        gap: 32px;
     }
 }
