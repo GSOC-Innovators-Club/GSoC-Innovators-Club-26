@@ -87,8 +87,9 @@ export function EventsSection() {
                                     <div className="event-content">
                                         {/* Timeline Element */}
                                         <div className="event-element">
-                                            <div className="event-element-dot" />
+                                            <img src="/Icons/Event-DownMark.svg" alt="Event marker" className="event-element-dot" />
                                             <div className="event-element-line" />
+                                            <div className="event-element-line-bg" />
                                         </div>
 
                                         {/* Event Texts */}
@@ -102,7 +103,7 @@ export function EventsSection() {
                                             <div className="event-highlights">
                                                 {event.highlights.map((highlight, hIndex) => (
                                                     <div key={hIndex} className="event-highlight">
-                                                        <div className="highlight-icon" />
+                                                        <img src="/Icons/Event-TickMark.svg" alt="Check" className="highlight-icon" />
                                                         <p className="highlight-text">{highlight}</p>
                                                     </div>
                                                 ))}

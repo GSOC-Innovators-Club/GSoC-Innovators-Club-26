@@ -145,23 +145,33 @@
 
 .event-element {
     width: 80px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr;
     gap: var(--spacing-sm);
+    justify-items: center;
 }
 
+
 .event-element-dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #9f53ff, #ff98e2);
+    width: 32px;
+    height: 32px;
 }
 
 .event-element-line {
     width: 4px;
-    flex: 1;
+    grid-row: 2;
+    grid-column: 1;
     background: linear-gradient(180deg, #9f53ff, transparent);
-    margin-left: 9px;
+    z-index: 2;
+}
+
+.event-element-line-bg {
+    width: 4px;
+    grid-row: 2;
+    grid-column: 1;
+    background: #9f53ff;
+    filter: blur(8px);
+    z-index: 1;
 }
 
 .event-texts {
@@ -206,10 +216,8 @@
 }
 
 .highlight-icon {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #88e5be, #1a1a32);
+    width: 24px;
+    height: 24px;
     flex-shrink: 0;
 }
 
