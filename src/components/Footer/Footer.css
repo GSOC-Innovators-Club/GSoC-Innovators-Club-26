@@ -116,19 +116,28 @@
     .footer {
         padding: 0 var(--spacing-lg);
     }
-
+    
     .footer-top {
         flex-direction: column;
-        gap: var(--spacing-lg);
+        gap: var(--spacing-xl);
+        text-align: center;
+        padding: var(--spacing-lg) 0;
+    }
+
+    .footer-brand-left,
+    .footer-brand-right {
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+
+    .footer-logo-container {
+        flex-direction: column;
+        justify-content: center;
         text-align: center;
     }
 
-    .footer-brand {
-        align-items: center;
-    }
-
-    .footer-right {
-        align-items: center;
+    .footer-brand-name {
+        text-align: center;
     }
 }
 

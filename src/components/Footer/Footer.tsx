@@ -1,10 +1,14 @@
 import './Footer.css';
 
-const socialLinks = [
-    { name: 'Instagram', icon: '/Icons/Instagram_Logo.svg', url: '#' },
-    { name: 'LinkedIn', icon: '/Icons/LinkedIn_Logo.svg', url: '#' },
-    { name: 'X', icon: '/Icons/X_Logo.svg', url: '#' }
+const GsocLinks = [
+    { name: 'Instagram', icon: '/Icons/Instagram_Logo.svg', url: 'https://www.instagram.com/gsoc_innovators_club/' },
+    { name: 'LinkedIn', icon: '/Icons/LinkedIn_Logo.svg', url: 'https://www.linkedin.com/company/gsoc-innovators/' },
 ];
+const VitLinks = [
+    { name: 'Instagram', icon: '/Icons/Instagram_Logo.svg', url: 'https://www.instagram.com/vit.bhopal/' },
+    { name: 'LinkedIn', icon: '/Icons/LinkedIn_Logo.svg', url: 'https://www.linkedin.com/school/vit-bhopal-university/posts/?feedView=all' },
+];
+
 
 
 export function Footer() {
@@ -28,7 +32,7 @@ export function Footer() {
 
                         {/* Social Links */}
                         <div className="footer-social">
-                            {socialLinks.map((social) => (
+                            {GsocLinks.map((social) => (
                                 <a
                                     key={social.name}
                                     href={social.url}
@@ -48,7 +52,7 @@ export function Footer() {
                         {/* Navigation */}
                         <div className="footer-logo-container">
                             <img
-                               src="/Logos/VITB_White_No_BG.png"
+                                src="/Logos/VITB_White_No_BG.png"
                                 alt="VIT Bhopal University"
                                 className="footer-vitb-logo"
                             />
@@ -56,7 +60,7 @@ export function Footer() {
 
                         {/* Social Links */}
                         <div className="footer-social">
-                            {socialLinks.map((social) => (
+                            {VitLinks.map((social) => (
                                 <a
                                     key={social.name}
                                     href={social.url}

@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { MobileMenu } from '../MobileMenu/MobileMenu';
 import './Header.css';
 
 const navLinks = [
@@ -9,9 +11,19 @@ const navLinks = [
 ];
 
 export function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     return (
         <header className="header">
             <nav className="navbar">
+                {/* Mobile Hamburger */}
+                <button 
+                    className="mobile-hamburger" 
+                    onClick={() => setIsMenuOpen(true)}
+                    aria-label="Open Menu"
+                >
+                    <img src="/Icons/Hamburger.svg" alt="" />
+                </button>
                 {/* Club Branding */}
                 <div className="branding">
                     <Link to="/">
@@ -46,13 +58,15 @@ export function Header() {
                     ))}
                 </div>
 
-                {/* VIT Bhopal Logo */}
                 <img
                     src="/Logos/VITB_White_No_BG.png"
                     alt="VIT Bhopal University"
                     className="vitb-logo"
                 />
             </nav>
+
+            {/* Mobile Navigation Menu */}
+            <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
         </header>
     );
 }

@@ -18,6 +18,22 @@
     backdrop-filter: blur(34px);
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+}
+
+/* Mobile Hamburger */
+.mobile-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.mobile-hamburger img {
+    width: 24px;
+    height: auto;
 }
 
 /* Branding */
@@ -97,11 +113,40 @@
 }
 
 @media (max-width: 768px) {
+    .header {
+        padding: 8px;
+    }
+
+    .navbar {
+        height: 50px;
+        padding: 4px 8px;
+        gap: 12px;
+        border-radius: 0 0 12px 12px;
+    }
+
     .navigation {
         display: none;
     }
 
+    .mobile-hamburger {
+        display: block;
+    }
+
+    .branding {
+        gap: 8px;
+    }
+
+    .club-logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .brand-name {
+        font-size: 14px;
+    }
+
     .vitb-logo {
-        height: 60px;
+        height: 42px;
+        width: auto;
     }
 }
