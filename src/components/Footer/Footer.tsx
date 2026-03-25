@@ -51,11 +51,18 @@ export function Footer() {
                     <div className="footer-brand-right">
                         {/* Navigation */}
                         <div className="footer-logo-container">
+                        <a 
+                            href="https://vitbhopal.ac.in/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="footer-vitb-link"
+                        >
                             <img
                                 src="/Logos/VITB_White_No_BG.png"
                                 alt="VIT Bhopal University"
                                 className="footer-vitb-logo"
                             />
+                        </a>
                         </div>
 
                         {/* Social Links */}

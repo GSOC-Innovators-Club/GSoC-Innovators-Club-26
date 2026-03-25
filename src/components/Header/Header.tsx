@@ -70,11 +70,18 @@ export function Header() {
                     ))}
                 </div>
 
-                <img
-                    src="/Logos/VITB_White_No_BG.png"
-                    alt="VIT Bhopal University"
-                    className="vitb-logo"
-                />
+                <a 
+                    href="https://vitbhopal.ac.in/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="vitb-logo-link"
+                >
+                    <img
+                        src="/Logos/VITB_White_No_BG.png"
+                        alt="VIT Bhopal University"
+                        className="vitb-logo"
+                    />
+                </a>
             </nav>
 
             {/* Mobile Navigation Menu */}
