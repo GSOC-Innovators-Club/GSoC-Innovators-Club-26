@@ -105,9 +105,6 @@ export function HeroSection() {
                             <button className="btn btn-primary">
                                 Join Now
                             </button>
-                            <button className="btn btn-secondary">
-                                Apply Now
-                            </button>
                         </div>
                     </div>
                 </div>

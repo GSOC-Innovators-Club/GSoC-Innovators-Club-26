@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './EventsSection.css';
 
 interface EventData {
@@ -19,44 +19,11 @@ const events: EventData[] = [
             'Qualify in Hackathon for Trophies, Certificates etc/'
         ]
     },
-    {
-        name: "Exciting Event'2",
-        date: 'DD/MM/YYYY',
-        venue: 'Mount Olympus Mars',
-        highlights: [
-            'Lorem ipsum dolor sit amet consectetur.',
-            'Lorem ipsum dolor sit amet consectetur. Tellus non sed sollicitudin magna sit mattis urna.',
-            'Lorem ipsum dolor sit amet consectetur. Tincidunt pharetra urna aenean sit dui arcu.',
-            'Lorem ipsum dolor sit amet consectetur.'
-        ]
-    },
-    {
-        name: "Exciting Event'3",
-        date: 'DD/MM/YYYY',
-        venue: 'Mount Olympus Mars',
-        highlights: [
-            'Lorem ipsum dolor sit amet consectetur.',
-            'Lorem ipsum dolor sit amet consectetur. Tellus non sed sollicitudin magna sit mattis urna.',
-            'Lorem ipsum dolor sit amet consectetur. Tincidunt pharetra urna aenean sit dui arcu.',
-            'Lorem ipsum dolor sit amet consectetur.'
-        ]
-    }
+    
 ];
 
 export function EventsSection() {
-    const sliderRef = useRef<HTMLDivElement>(null);
-
-    const scrollLeft = () => {
-        if (sliderRef.current) {
-            sliderRef.current.scrollBy({ left: -600, behavior: 'smooth' });
-        }
-    };
-
-    const scrollRight = () => {
-        if (sliderRef.current) {
-            sliderRef.current.scrollBy({ left: 600, behavior: 'smooth' });
-        }
-    };
+    const navigate = useNavigate();
 
     return (
         <section className="events-section" id="events">
@@ -71,16 +38,9 @@ export function EventsSection() {
                     </p>
                 </div>
 
-                {/* Slider */}
-                <div className="events-slider-container">
-                    {/* Left Navigation */}
-                    <button className="slider-nav left" onClick={scrollLeft} aria-label="Previous event">
-                        <img src="/Icons/Slide_left.svg" alt="Previous" />
-                    </button>
-
-                    {/* Events Slider */}
-                    <div className="events-slider" ref={sliderRef}>
-                        {events.map((event, index) => (
+                {/* Single Event Display */}
+                <div className="events-display">
+                    {events.map((event, index) => (
                             <article key={index} className="event-card">
                                 <div className="event-card-inner">
                                     {/* Event Content */}
@@ -118,11 +78,11 @@ export function EventsSection() {
                                 </div>
                             </article>
                         ))}
-                    </div>
+                </div>
 
-                    {/* Right Navigation */}
-                    <button className="slider-nav right" onClick={scrollRight} aria-label="Next event">
-                        <img src="/Icons/Slide_Right.svg" alt="Next" />
+                <div className="events-view-more">
+                    <button className="btn btn-secondary" onClick={() => navigate('/events')}>
+                        View More
                     </button>
                 </div>
             </div>

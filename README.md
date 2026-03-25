@@ -1,7 +1,9 @@
 # GSoC Innovators Club - Frontend
 
 ---
+
 ## React + TypeScript + Vite
+
 ---
 
 A modern, immersive landing page for the GSoC Innovators Club, designed to attract and engage passionate developers.
@@ -48,23 +50,26 @@ src/
 
 ## 🛠️ Getting Started
 
-1.  **Clone the Repository**
-2.  **Install Dependencies**:
-    ```bash
+1. **Clone the Repository**
+2. **Install Dependencies**:
+  
+   ```bash
     npm install
     ```
-3.  **Run Development Server**:
-    ```bash
-    npm run dev
-    ```
-4.  **Build for Production**:
-    ```bash
-    npm run build
-    ```
 
+3. **Run Development Server**:
+  
+  ```bash
+    npm run dev
+  ```
+
+1. **Build for Production**:
+  
+  ```bash
+  npm run build
+  ```
 
 ---
-
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -139,4 +144,3 @@ export default defineConfig([
   },
 ])
 ```
-
