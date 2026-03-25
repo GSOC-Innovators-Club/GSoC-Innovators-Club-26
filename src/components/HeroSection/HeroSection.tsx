@@ -3,6 +3,7 @@ import './HeroSection.css';
 import { NebulaSphere } from './NebulaSphere';
 import { FloatingCard } from './FloatingCard';
 import { useScrollAnimation } from './useScrollAnimation';
+import { useModal } from '../../context/ModalContext';
 
 const floatingCards = [
     {
@@ -34,6 +35,7 @@ const floatingCards = [
 export function HeroSection() {
     const heroRef = useRef<HTMLElement>(null);
     const { scrollProgress } = useScrollAnimation(heroRef, 600);
+    const { openFollowModal } = useModal();
 
     // Calculate text animation values based on scroll progress
     const textOpacity = Math.max(0, 1 - scrollProgress * 2); // Fade out in first half
@@ -102,7 +104,10 @@ export function HeroSection() {
 
                         {/* Buttons */}
                         <div className="buttons">
-                            <button className="btn btn-primary">
+                            <button 
+                                className="btn btn-primary"
+                                onClick={openFollowModal}
+                            >
                                 Join Now
                             </button>
                         </div>
