@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
+import { FollowUsModal } from '../FollowUsModal/FollowUsModal';
+import { useModal } from '../../context/ModalContext';
 import './Header.css';
 
 const navLinks = [
@@ -12,6 +14,12 @@ const navLinks = [
 
 export function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { isFollowModalOpen, openFollowModal, closeFollowModal } = useModal();
+
+    const handleFollowClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        openFollowModal();
+    };
 
     return (
         <header className="header">
@@ -47,7 +55,11 @@ export function Header() {
                                     {link.label}
                                 </Link>
                             ) : (
-                                <a href={link.href} className="nav-link">
+                                <a 
+                                    href={link.href} 
+                                    className="nav-link"
+                                    onClick={link.label === 'Follow Us' ? handleFollowClick : undefined}
+                                >
                                     {link.label}
                                 </a>
                             )}
@@ -58,15 +70,31 @@ export function Header() {
                     ))}
                 </div>
 
-                <img
-                    src="/Logos/VITB_White_No_BG.png"
-                    alt="VIT Bhopal University"
-                    className="vitb-logo"
-                />
+                <a 
+                    href="https://vitbhopal.ac.in/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="vitb-logo-link"
+                >
+                    <img
+                        src="/Logos/VITB_White_No_BG.png"
+                        alt="VIT Bhopal University"
+                        className="vitb-logo"
+                    />
+                </a>
             </nav>
 
             {/* Mobile Navigation Menu */}
-            <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+            <MobileMenu 
+                isOpen={isMenuOpen} 
+                onClose={() => setIsMenuOpen(false)} 
+            />
+
+            {/* Follow Us Modal */}
+            <FollowUsModal 
+                isOpen={isFollowModalOpen} 
+                onClose={closeFollowModal} 
+            />
         </header>
     );
 }
