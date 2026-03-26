@@ -9,6 +9,7 @@ interface MobileMenuProps {
 const mobileNavLinks = [
     { label: 'Home', href: '/', icon: '/Icons/Home Icon.svg', isRoute: true },
     { label: 'Team', href: '/team', icon: '/Icons/GroupIcon.svg', isRoute: true },
+    { label: 'Open Source', href: '/open-source', icon: '/Icons/Code Icon.svg', isRoute: true },
     { label: 'Events', href: '/events', icon: '/Icons/Calender.svg', isRoute: true },
     { label: 'Follow Us', href: '#follow', icon: '/Icons/Social Icon.svg', isRoute: false },
 ];
