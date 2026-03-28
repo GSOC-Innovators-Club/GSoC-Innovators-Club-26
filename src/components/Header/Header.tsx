@@ -8,6 +8,7 @@ import './Header.css';
 const navLinks = [
     { label: 'Team', href: '/team', isRoute: true },
     { label: 'Projects', href: '/projects', isRoute: true },
+    { label: 'Open Source', href: '/opensource', isRoute: true },
     { label: 'Events', href: '/events', isRoute: true },
     { label: 'Follow Us', href: '#follow', isRoute: false },
 ];
