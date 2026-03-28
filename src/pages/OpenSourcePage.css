@@ -1,45 +1,45 @@
-    .opensource-page {
+.opensource-page {
     min-height: auto;
     display: block;
     flex-direction: column;
     background: radial-gradient(circle at top, #1d1236 0%, #050311 55%, #01010a 100%);
     color: #ffffff;
-    }
+}
 
-    .opensource-main {
+.opensource-main {
     width: 100%;
     max-width: 1120px;
     margin: 0 auto;
     padding: 120px 1.5rem 1.5rem; 
-    }
+}
 
-    .opensource-hero {
+.opensource-hero {
     margin-bottom: 3rem;
-    }
+}
 
-    .opensource-kicker {
+.opensource-kicker {
     font-size: 0.9rem;
     letter-spacing: 0.24em;
     text-transform: uppercase;
     color: #c4b5fd;
     margin-bottom: 0.75rem;
-    }
+}
 
-    .opensource-title {
+.opensource-title {
     font-size: clamp(2.3rem, 3.5vw, 3rem);
     line-height: 1.1;
     font-weight: 700;
     margin-bottom: 1rem;
-    }
+}
 
-    .opensource-subtitle {
+.opensource-subtitle {
     max-width: 640px;
     font-size: 0.98rem;
     line-height: 1.7;
     color: #e5e7eb;
-    }
+}
 
-    .opensource-section {
+.opensource-section {
     margin-top: 2rem;
     margin-bottom: 0;
     }
