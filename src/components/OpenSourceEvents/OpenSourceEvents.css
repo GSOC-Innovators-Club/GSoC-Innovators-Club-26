@@ -5,16 +5,23 @@
   }
   
   .section-title {
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-family: var(--font-heading);
+    font-size: 56px;
+    font-weight: 700;
     text-align: center;
     margin-bottom: 1rem;
-    color: #c7d2fe;
+  }
+  
+  .section-title .highlight {
+    background: linear-gradient(135deg, #008BFF 0%, #FF00B8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   .section-subtitle {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 18px;
     margin-bottom: 3rem;
     color: #a5b4fc;
     max-width: 600px;

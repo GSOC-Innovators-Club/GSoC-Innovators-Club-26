@@ -31,7 +31,9 @@ const events = [
 const OpenSourceEvents: React.FC = () => {
   return (
     <section className="open-source-events">
-      <h2 className="section-title">Ongoing Open Source Events</h2>
+      <h2 className="section-title">
+          <span className="highlight">Open Source</span>
+      </h2>
       <p className="section-subtitle">
         Participate in leading open source events, contribute to impactful projects, and accelerate your skills.
       </p>
