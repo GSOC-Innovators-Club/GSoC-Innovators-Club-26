@@ -1,0 +1,34 @@
+.open-source-page {
+    position: relative;
+    min-height: 100vh;
+    background-color: #0e0c15;
+    padding-top: 120px;
+    padding-bottom: 80px;
+    overflow: hidden;
+}
+.open-source-page-bg-gradient {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1400px;
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.8;
+    mix-blend-mode: color-dodge;
+    -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 45%);
+    mask-image: radial-gradient(circle at center, black 30%, transparent 45%);
+}
+
+.events-bg-gradient img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.open-source-events {
+    position: relative;
+    z-index: 2;
+}

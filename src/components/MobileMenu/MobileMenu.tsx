@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useModal } from '../../context/ModalContext';
 import './MobileMenu.css';
 
 interface MobileMenuProps {
@@ -9,11 +10,20 @@ interface MobileMenuProps {
 const mobileNavLinks = [
     { label: 'Home', href: '/', icon: '/Icons/Home Icon.svg', isRoute: true },
     { label: 'Team', href: '/team', icon: '/Icons/GroupIcon.svg', isRoute: true },
+    { label: 'Projects', href: '/projects', icon: '/Icons/Projects.svg', isRoute: true },
     { label: 'Events', href: '/events', icon: '/Icons/Calender.svg', isRoute: true },
     { label: 'Follow Us', href: '#follow', icon: '/Icons/Social Icon.svg', isRoute: false },
 ];
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+    const { openFollowModal } = useModal();
+
+    const handleFollowClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        onClose();
+        openFollowModal();
+    };
+
     return (
         <>
             {/* Overlay */}
@@ -37,16 +47,22 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     {/* Nav Links */}
                     <nav className="mobile-nav">
                         {mobileNavLinks.map((link) => (
-                            <div key={link.label} className="mobile-nav-item">
-                                <img src={link.icon} alt="" className="mobile-nav-icon" />
-                                <span className="mobile-nav-separator">//</span>
+                            <div key={link.label} className="mobile-nav-container">
                                 {link.isRoute ? (
-                                    <Link to={link.href} className="mobile-nav-link" onClick={onClose}>
-                                        {link.label}
+                                    <Link to={link.href} className="mobile-nav-item" onClick={onClose}>
+                                        <img src={link.icon} alt="" className="mobile-nav-icon" />
+                                        <span className="mobile-nav-separator">//</span>
+                                        <span className="mobile-nav-text">{link.label}</span>
                                     </Link>
                                 ) : (
-                                    <a href={link.href} className="mobile-nav-link" onClick={onClose}>
-                                        {link.label}
+                                    <a 
+                                        href={link.href} 
+                                        className="mobile-nav-item" 
+                                        onClick={link.label === 'Follow Us' ? handleFollowClick : onClose}
+                                    >
+                                        <img src={link.icon} alt="" className="mobile-nav-icon" />
+                                        <span className="mobile-nav-separator">//</span>
+                                        <span className="mobile-nav-text">{link.label}</span>
                                     </a>
                                 )}
                             </div>

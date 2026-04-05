@@ -1,0 +1,71 @@
+import './FollowUsModal.css';
+
+interface FollowUsModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+}
+
+const platforms = [
+    {
+        name: 'WhatsApp Community',
+        icon: '/Icons/Whatsapp_Logo.svg',
+        url: 'https://chat.whatsapp.com/your-link-here'
+    },
+    {
+        name: 'Instagram',
+        icon: '/Icons/Instagram_Logo.svg',
+        url: 'https://www.instagram.com/gsoc_innovators_club/'
+    },
+    {
+        name: 'LinkedIn',
+        icon: '/Icons/LinkedIn_Logo.svg',
+        url: 'https://www.linkedin.com/company/gsoc-innovators/'
+    },
+    {
+        name: 'Discord',
+        icon: '/Icons/Discord_Logo.svg',
+        url: 'https://discord.gg/your-link-here'
+    }
+];
+
+export function FollowUsModal({ isOpen, onClose }: FollowUsModalProps) {
+    if (!isOpen) return null;
+
+    return (
+        <div className="modal-overlay" onClick={onClose}>
+            <div className="follow-modal" onClick={(e) => e.stopPropagation()}>
+                {/* Modal Header */}
+                <div className="modal-header">
+                    <button className="modal-close" onClick={onClose} aria-label="Close Modal">
+                        <img src="/Icons/CloseIcon.svg" alt="Close" />
+                    </button>
+                    
+                    <div className="modal-branding">
+                        <img src="/Logos/ClubLogo.png" alt="Logo" className="modal-logo" />
+                        <span className="modal-brand-name">GSoC{"\n"}Innovators{"\n"}Club</span>
+                    </div>
+                </div>
+
+                {/* Modal Title */}
+                <h2 className="modal-title">Connect with us on the following platforms</h2>
+
+                {/* Platform Links */}
+                <div className="platform-list">
+                    {platforms.map((platform) => (
+                        <a 
+                            key={platform.name} 
+                            href={platform.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="platform-item"
+                        >
+                            <img src={platform.icon} alt="" className="platform-icon" />
+                            <span className="platform-separator">//</span>
+                            <span className="platform-name">{platform.name}</span>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+}
