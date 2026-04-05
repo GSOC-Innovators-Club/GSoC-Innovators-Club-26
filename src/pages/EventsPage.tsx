@@ -7,41 +7,58 @@ interface EventData {
     name: string;
     date: string;
     venue: string;
+    time: string;
+    description?: string;
     highlights: string[];
+    agenda?: string[];
+    posterUrl?: string; 
 }
 
 const events: EventData[] = [
     {
         name: "Summer of CodeFest'25",
-        date: 'DD/MM/YYYY',
+        date: 'April 13-14, 2025',
         venue: 'AB-2 Auditorium',
+        time: '09:00 AM onwards',
+        description: 'This event will have a Seminar and an innovative Hackathon. Learn how to prepare for GSOC and increase your chances of selection. Also compete in a hackathon with peers in building innovative projects.',
         highlights: [
-            'Secrets to Crack GSoC',
-            'Win Tech Quiz for exciting prizes',
-            'Qualify in Hackathon for Trophies, Certificates etc/'
-        ]
+            'Basic programming knowledge',
+            'GitHub account',
+            'Laptop with internet connection etc.'
+        ],
+        agenda: [
+            'Introduction to GSOC',
+            'Introduction to Github',
+            'Fun Activities',
+            'Hackathon'
+        ],
     },
     {
-        name: "Exciting Event'2",
-        date: 'DD/MM/YYYY',
-        venue: 'Mount Olympus Mars',
+        name: "Cinemaghar",
+        date: 'February 28, 2026',
+        venue: 'AB-2 Auditorium-2',
+        time: '11:00 AM - 02:00 PM',
+        description: ' Your Wait is Over! We are LIVE with your voted movie Chhichhore. Ab delay kyu? Register karo & apni seat confirm karo!',
         highlights: [
-            'Lorem ipsum dolor sit amet consectetur.',
-            'Lorem ipsum dolor sit amet consectetur. Tellus non sed sollicitudin magna sit mattis urna.',
-            'Lorem ipsum dolor sit amet consectetur. Tincidunt pharetra urna aenean sit dui arcu.',
-            'Lorem ipsum dolor sit amet consectetur.'
-        ]
+            'Leave all worries behind.',
+            'Enjoy to your fullest',
+        ],
+        agenda: [
+            'Join us for a cinematic experience like no other!',
+            'Live DJ, Epic games and More...',
+            'See you there!'
+        ],
+        posterUrl: '/Components/Cinemaghar.jpeg' 
     },
     {
-        name: "Exciting Event'3",
-        date: 'DD/MM/YYYY',
-        venue: 'Mount Olympus Mars',
+        name: "Summer of CodeFest'26",
+        date: 'upcoming',
+        venue: 'upcoming',
+        time: 'upcoming',
+        description: 'Something exciting is brewing for Summer of CodeFest 2026! Stay tuned for updates on our upcoming event that promises to be bigger and better than ever before. Get ready for an unforgettable experience filled with learning, innovation, and fun!',
         highlights: [
-            'Lorem ipsum dolor sit amet consectetur.',
-            'Lorem ipsum dolor sit amet consectetur. Tellus non sed sollicitudin magna sit mattis urna.',
-            'Lorem ipsum dolor sit amet consectetur. Tincidunt pharetra urna aenean sit dui arcu.',
-            'Lorem ipsum dolor sit amet consectetur.'
-        ]
+            'upcoming'
+        ],
     }
 ];
 
@@ -86,9 +103,16 @@ export function EventsPage() {
                                                 <h3 className="event-name">{event.name}</h3>
                                                 <p className="event-meta">Date: {event.date}</p>
                                                 <p className="event-meta">Venue: {event.venue}</p>
+                                                <p className="event-meta">Time: {event.time}</p>
                                             </div>
+                                            {event.description && (
+                                                <p className="event-description">{event.description}</p>
+                                            )}
+
+
 
                                             <div className="event-highlights">
+                                                <h4 className="agenda-title">Requirements</h4>
                                                 {event.highlights.map((highlight, hIndex) => (
                                                     <div key={hIndex} className="event-highlight">
                                                         <img src="/Icons/Event-TickMark.svg" alt="Check" className="highlight-icon" />
@@ -96,12 +120,28 @@ export function EventsPage() {
                                                     </div>
                                                 ))}
                                             </div>
+                                            {event.agenda && (
+                                                <div className="event-highlights">
+                                                    <h4 className="agenda-title">Event Agenda</h4>
+                                                    {event.agenda.map((item, aIndex) => (
+                                                        <div key={aIndex} className="event-highlight">
+                                                            <img src="/Icons/Event-TickMark.svg" alt="Check" className="highlight-icon" />
+                                                            <p className="highlight-text">{item}</p>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
+
                                         </div>
                                     </div>
 
                                     {/* Event Poster */}
                                     <div className="event-poster">
-                                        <span className="poster-placeholder">Event Poster</span>
+                                        {event.posterUrl ? (
+                                            <img src={event.posterUrl} alt="Event Poster" className="poster-image" />
+                                        ) : (
+                                            <span className="poster-placeholder">Event Poster</span>
+                                        )}
                                     </div>
                                 </div>
                             </article>
