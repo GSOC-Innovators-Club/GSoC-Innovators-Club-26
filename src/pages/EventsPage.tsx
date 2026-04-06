@@ -9,29 +9,20 @@ interface EventData {
     venue: string;
     time: string;
     description?: string;
-    highlights: string[];
-    agenda?: string[];
-    posterUrl?: string; 
+    highlights?: string[];
+    posterUrl?: string;
+    socialLink?: string;
 }
 
 const events: EventData[] = [
     {
-        name: "Summer of CodeFest'25",
+        name: "Summer of CodeFest '25",
         date: 'April 13-14, 2025',
         venue: 'AB-2 Auditorium',
         time: '09:00 AM onwards',
         description: 'This event will have a Seminar and an innovative Hackathon. Learn how to prepare for GSOC and increase your chances of selection. Also compete in a hackathon with peers in building innovative projects.',
-        highlights: [
-            'Basic programming knowledge',
-            'GitHub account',
-            'Laptop with internet connection etc.'
-        ],
-        agenda: [
-            'Introduction to GSOC',
-            'Introduction to Github',
-            'Fun Activities',
-            'Hackathon'
-        ],
+        posterUrl: '/Components/Summer of CodeFest \'25.png',
+        socialLink: 'https://www.instagram.com/reel/DKY-jaZPTbQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
     },
     {
         name: "Cinemaghar",
@@ -39,26 +30,15 @@ const events: EventData[] = [
         venue: 'AB-2 Auditorium-2',
         time: '11:00 AM - 02:00 PM',
         description: ' Your Wait is Over! We are LIVE with your voted movie Chhichhore. Ab delay kyu? Register karo & apni seat confirm karo!',
-        highlights: [
-            'Leave all worries behind.',
-            'Enjoy to your fullest',
-        ],
-        agenda: [
-            'Join us for a cinematic experience like no other!',
-            'Live DJ, Epic games and More...',
-            'See you there!'
-        ],
-        posterUrl: '/Components/Cinemaghar.jpeg' 
+        posterUrl: '/Components/Cinemaghar.jpeg',
+        socialLink: 'https://www.instagram.com/reel/DVHBrU4D8JV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
     },
     {
-        name: "Summer of CodeFest'26",
+        name: "Summer of CodeFest '26",
         date: 'upcoming',
         venue: 'upcoming',
         time: 'upcoming',
-        description: 'Something exciting is brewing for Summer of CodeFest 2026! Stay tuned for updates on our upcoming event that promises to be bigger and better than ever before. Get ready for an unforgettable experience filled with learning, innovation, and fun!',
-        highlights: [
-            'upcoming'
-        ],
+        description: 'Big things are coming—Summer of CodeFest \'26 is about to level up like never before 🚀',
     }
 ];
 
@@ -108,29 +88,27 @@ export function EventsPage() {
                                             {event.description && (
                                                 <p className="event-description">{event.description}</p>
                                             )}
+                                            {/*add a button which links to social media*/}
+
+                                            <div className="event-social-links">
+                                                <a href={event.socialLink} target="_blank" rel="noopener noreferrer" className="social-link">
+                                                    <button className="Btn">See More
+                                                        <svg className="svg" viewBox="0 0 512 512">
+                                                        </svg>
+                                                    </button>
+                                                </a>
+                                            </div>
 
 
-
-                                            <div className="event-highlights">
+                                            {/* <div className="event-highlights">
                                                 <h4 className="agenda-title">Requirements</h4>
-                                                {event.highlights.map((highlight, hIndex) => (
+                                                {event.highlights?.map((highlight, hIndex) => (
                                                     <div key={hIndex} className="event-highlight">
                                                         <img src="/Icons/Event-TickMark.svg" alt="Check" className="highlight-icon" />
                                                         <p className="highlight-text">{highlight}</p>
                                                     </div>
                                                 ))}
-                                            </div>
-                                            {event.agenda && (
-                                                <div className="event-highlights">
-                                                    <h4 className="agenda-title">Event Agenda</h4>
-                                                    {event.agenda.map((item, aIndex) => (
-                                                        <div key={aIndex} className="event-highlight">
-                                                            <img src="/Icons/Event-TickMark.svg" alt="Check" className="highlight-icon" />
-                                                            <p className="highlight-text">{item}</p>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            )}
+                                            </div> */}
 
                                         </div>
                                     </div>

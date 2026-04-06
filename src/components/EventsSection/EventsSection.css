@@ -60,7 +60,7 @@
     flex-shrink: 0;
     width: 1272px;
     max-width: 90vw;
-    min-height: 600px;
+    min-height: 500px;
     background: linear-gradient(135deg,
             rgba(0, 0, 0, 0.16),
             rgba(83, 84, 108, 0.16));
@@ -179,8 +179,8 @@
 
 /* Event Poster */
 .event-poster {
-    width: 456px;
-    min-height: 800px;
+    width: 450px;
+    height: 450px;
     background: linear-gradient(135deg, #1b1c36, #2d2e48);
     border-radius: var(--radius-md);
     display: flex;
