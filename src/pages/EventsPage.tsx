@@ -4,10 +4,10 @@ import './EventsPage.css';
 import '../components/EventsSection/EventsSection.css';
 
 interface EventData {
-    name: string;
-    date: string;
-    venue: string;
-    time: string;
+    name?: string;
+    date?: string;
+    venue?: string;
+    time?: string;
     description?: string;
     highlights?: string[];
     posterUrl?: string;
@@ -33,13 +33,6 @@ const events: EventData[] = [
         posterUrl: '/Components/Cinemaghar.jpeg',
         socialLink: 'https://www.instagram.com/reel/DVHBrU4D8JV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
     },
-    {
-        name: "Summer of CodeFest '26",
-        date: 'upcoming',
-        venue: 'upcoming',
-        time: 'upcoming',
-        description: 'Big things are coming—Summer of CodeFest \'26 is about to level up like never before 🚀',
-    }
 ];
 
 export function EventsPage() {
@@ -88,10 +81,10 @@ export function EventsPage() {
                                             {event.description && (
                                                 <p className="event-description">{event.description}</p>
                                             )}
-                                            {/*add a button which links to social media*/}
+                                            
 
                                             <div className="event-social-links">
-                                                <a href={event.socialLink} target="_blank" rel="noopener noreferrer" className="social-link">
+                                                <a href={event.socialLink} target="_blank"  className="social-link">
                                                     <button className="Btn">See More
                                                         <svg className="svg" viewBox="0 0 512 512">
                                                         </svg>
@@ -124,6 +117,16 @@ export function EventsPage() {
                                 </div>
                             </article>
                         ))}
+                    </div>
+                    <div className="events-list justify-center">
+                        <div className="event-card upcoming-event">
+                            <div className="event-element">
+                                <img src="/Icons/Event-DownMark.svg" alt="Event marker" className="event-element-dot" />
+                                <div className="event-element-line" />
+                                <div className="event-element-line-bg" />
+                            </div>
+                            <div className="upcoming-event-text">Something Big is Loading.....</div>
+                        </div> 
                     </div>
                 </div>
             </main>
