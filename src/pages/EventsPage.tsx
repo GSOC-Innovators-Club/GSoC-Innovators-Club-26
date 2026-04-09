@@ -22,7 +22,7 @@ const events: EventData[] = [
         time: '09:00 AM onwards',
         description: 'This event will have a Seminar and an innovative Hackathon. Learn how to prepare for GSOC and increase your chances of selection. Also compete in a hackathon with peers in building innovative projects.',
         posterUrl: '/Components/Summer of CodeFest \'25.png',
-        socialLink: 'https://www.instagram.com/reel/DKY-jaZPTbQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+        socialLink: 'https://www.linkedin.com/posts/gsoc-innovators_summerofcodefest25-hackathon-coding-activity-7327258229762117632-WQJ1?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEYLyy0BAfljEsrWtQM_6WXPdyr3qIRneoQ',
     },
     {
         name: "Cinemaghar",
@@ -31,7 +31,7 @@ const events: EventData[] = [
         time: '11:00 AM - 02:00 PM',
         description: ' Your Wait is Over! We are LIVE with your voted movie Chhichhore. Ab delay kyu? Register karo & apni seat confirm karo!',
         posterUrl: '/Components/Cinemaghar.jpeg',
-        socialLink: 'https://www.instagram.com/reel/DVHBrU4D8JV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+        socialLink: 'https://www.linkedin.com/posts/gsoc-innovators_opensource-techcommunity-gsocinnovatorsclub-activity-7436354197416984576-43Z_?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEYLyy0BAfljEsrWtQM_6WXPdyr3qIRneoQ',
     },
 ];
 
