@@ -16,6 +16,7 @@
 
 /* Footer Top */
 .footer-top {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,6 +67,7 @@
 .footer-social {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 32px;
 }
 
@@ -86,6 +88,41 @@
 .social-link img {
     width: 32px;
     height: 32px;
+}
+
+.Contact-Us {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-heading{
+    font-family: var(--font-ui);
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-align: center;
+}
+
+.contact-email {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    font-family: var(--font-ui);
+    font-size: 18px;
+    margin: 7px 0;
+    color: var(--color-text-muted);
+}
+
+.contact-email img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 
@@ -122,6 +159,12 @@
         gap: var(--spacing-xl);
         text-align: center;
         padding: var(--spacing-lg) 0;
+    }
+
+    .Contact-Us {
+        position: static;
+        left: auto;
+        transform: none;
     }
 
     .footer-brand-left,
