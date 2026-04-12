@@ -1,12 +1,8 @@
 import './Footer.css';
 
-const GsocLinks = [
+const VitLinks = [
     { name: 'Instagram', icon: '/Icons/Instagram_Logo.svg', url: 'https://www.instagram.com/gsoc_innovators_club/' },
     { name: 'LinkedIn', icon: '/Icons/LinkedIn_Logo.svg', url: 'https://www.linkedin.com/company/gsoc-innovators/' },
-];
-const VitLinks = [
-    { name: 'Instagram', icon: '/Icons/Instagram_Logo.svg', url: 'https://www.instagram.com/vit.bhopal/' },
-    { name: 'LinkedIn', icon: '/Icons/LinkedIn_Logo.svg', url: 'https://www.linkedin.com/school/vit-bhopal-university/posts/?feedView=all' },
 ];
 
 
@@ -29,10 +25,14 @@ export function Footer() {
                                 GSoC{'\n'}Innovators{'\n'}Club
                             </span>
                         </div>
+                        
+                    </div>
 
-                        {/* Social Links */}
-                        <div className="footer-social">
-                            {GsocLinks.map((social) => (
+                    <div className="Contact-Us">
+                        <div className='contact-heading'>Contact Us</div>
+                        <div className='contact-email'><img src="/Icons/email-logo (1).svg" alt="Email" />gsocinnovators.queries@gmail.com</div>
+                            <div className="footer-social">
+                            {VitLinks.map((social) => (
                                 <a
                                     key={social.name}
                                     href={social.url}
@@ -45,7 +45,7 @@ export function Footer() {
                                 </a>
                             ))}
                         </div>
-                    </div>
+                        </div>
 
                     {/* Right Section */}
                     <div className="footer-brand-right">
@@ -66,20 +66,7 @@ export function Footer() {
                         </div>
 
                         {/* Social Links */}
-                        <div className="footer-social">
-                            {VitLinks.map((social) => (
-                                <a
-                                    key={social.name}
-                                    href={social.url}
-                                    className="social-link"
-                                    aria-label={social.name}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <img src={social.icon} alt={social.name} />
-                                </a>
-                            ))}
-                        </div>
+                        
                     </div>
                 </div>
 
