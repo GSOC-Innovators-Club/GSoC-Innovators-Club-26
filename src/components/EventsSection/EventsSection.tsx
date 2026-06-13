@@ -29,7 +29,7 @@ export function EventsSection() {
         <section className="events-section" id="events">
             <div className="events-container">
                 {/* Section Title */}
-                <div className="events-title-container">
+                <div className="events-title-container" data-reveal>
                     <h2 className="events-title">
                         Upcoming <span className="highlight">Events</span>
                     </h2>
@@ -41,7 +41,7 @@ export function EventsSection() {
                 {/* Single Event Display */}
                 <div className="events-display">
                     {events.map((event, index) => (
-                            <article key={index} className="event-card">
+                            <article key={index} className="event-card" data-reveal>
                                 <div className="event-card-inner">
                                     {/* Event Content */}
                                     <div className="event-content">
@@ -80,8 +80,11 @@ export function EventsSection() {
                         ))}
                 </div>
 
-                <div className="events-view-more">
-                    <button className="btn btn-secondary" onClick={() => navigate('/events')}>
+                <div className="events-view-more" data-reveal>
+                    <button
+                        className="btn btn-secondary"
+                        onClick={() => navigate('/events', { viewTransition: true })}
+                    >
                         View More
                     </button>
                 </div>

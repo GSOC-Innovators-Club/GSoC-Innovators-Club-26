@@ -20,6 +20,65 @@
     z-index: 0;
 }
 
+.nebula-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.nebula-fallback {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        radial-gradient(circle at 50% 76%, rgba(218, 36, 187, 0.4), transparent 12%),
+        radial-gradient(circle at 50% 72%, rgba(9, 14, 219, 0.42), transparent 30%),
+        radial-gradient(circle at center, rgba(53, 5, 126, 0.32), transparent 58%),
+        #090117;
+    transition: opacity 500ms ease;
+}
+
+.nebula-ready .nebula-fallback {
+    opacity: 0;
+}
+
+.nebula-loader {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+}
+
+.nebula-loader-core {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-top-color: #ff98e2;
+    border-right-color: #79fff7;
+    box-shadow: 0 0 28px rgba(159, 83, 255, 0.65);
+    animation: nebula-loader-spin 900ms linear infinite;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@keyframes nebula-loader-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .nebula-container canvas {
     position: absolute;
     top: 0;

@@ -29,11 +29,19 @@ const platforms = [
 ];
 
 export function FollowUsModal({ isOpen, onClose }: FollowUsModalProps) {
-    if (!isOpen) return null;
-
     return (
-        <div className="modal-overlay" onClick={onClose}>
-            <div className="follow-modal" onClick={(e) => e.stopPropagation()}>
+        <div
+            className={`modal-overlay ${isOpen ? 'open' : ''}`}
+            onClick={onClose}
+            aria-hidden={!isOpen}
+        >
+            <div
+                className="follow-modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="follow-modal-title"
+                onClick={(e) => e.stopPropagation()}
+            >
                 {/* Modal Header */}
                 <div className="modal-header">
                     <button className="modal-close" onClick={onClose} aria-label="Close Modal">
@@ -47,7 +55,9 @@ export function FollowUsModal({ isOpen, onClose }: FollowUsModalProps) {
                 </div>
 
                 {/* Modal Title */}
-                <h2 className="modal-title">Connect with us on the following platforms</h2>
+                <h2 className="modal-title" id="follow-modal-title">
+                    Connect with us on the following platforms
+                </h2>
 
                 {/* Platform Links */}
                 <div className="platform-list">

@@ -19,8 +19,11 @@ export function useScrollAnimation(
 ): ScrollAnimationResult {
     const [accumulatedScroll, setAccumulatedScroll] = useState(0);
     const [isAnimationComplete, setIsAnimationComplete] = useState(false);
+    const [reduceMotion, setReduceMotion] = useState(
+        () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    );
 
-    const scrollProgress = Math.min(accumulatedScroll / scrollThreshold, 1);
+    const scrollProgress = reduceMotion ? 0 : Math.min(accumulatedScroll / scrollThreshold, 1);
 
     const handleWheel = useCallback((event: WheelEvent) => {
         // If animation is complete and we're scrolling down, allow normal scroll
@@ -68,6 +71,16 @@ export function useScrollAnimation(
     }, [containerRef, isAnimationComplete, scrollThreshold]);
 
     useEffect(() => {
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const handleChange = (event: MediaQueryListEvent) => setReduceMotion(event.matches);
+
+        mediaQuery.addEventListener('change', handleChange);
+        return () => mediaQuery.removeEventListener('change', handleChange);
+    }, []);
+
+    useEffect(() => {
+        if (reduceMotion) return;
+
         const container = containerRef.current;
         if (!container) return;
 
@@ -79,7 +92,7 @@ export function useScrollAnimation(
             container.removeEventListener('wheel', handleWheel);
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [containerRef, handleWheel, handleScroll]);
+    }, [containerRef, handleWheel, handleScroll, reduceMotion]);
 
     return {
         scrollProgress,
