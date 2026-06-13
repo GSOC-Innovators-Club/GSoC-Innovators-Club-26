@@ -208,17 +208,16 @@
     background: linear-gradient(135deg, #1b1c36, #2d2e48);
     border-radius: var(--radius-md);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
 }
 
 .event-poster img {
-    width: 100%;
+    width: auto;
     height: auto;
     display: block;
-    
 }
 
 .poster-placeholder {
