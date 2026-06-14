@@ -1,5 +1,3 @@
-import { Header } from '../components/Header/Header';
-import { Footer } from '../components/Footer/Footer';
 import './ProjectsPage.css';
 
 interface ProjectData {
@@ -22,8 +20,6 @@ const projects: ProjectData[] = [
 
 export function ProjectsPage() {
     return (
-        <>
-            <Header />
             <main className="projects-page">
                 {/* Background gradient overlay */}
                 <div className="projects-bg-gradient">
@@ -32,7 +28,7 @@ export function ProjectsPage() {
 
                 <div className="projects-page-container">
                     {/* Page Title */}
-                    <div className="projects-page-header">
+                    <div className="projects-page-header" data-reveal>
                         <h1 className="projects-page-title">
                             <span className="highlight">Our Projects</span>
                         </h1>
@@ -44,7 +40,7 @@ export function ProjectsPage() {
                     {/* Projects List */}
                     <div className="projects-list">
                         {projects.map((project, index) => (
-                            <article key={index} className="project-card">
+                            <article key={index} className="project-card" data-reveal>
                                 <div className="project-card-inner">
                                     {/* Project Details */}
                                     <div className="project-details">
@@ -77,7 +73,13 @@ export function ProjectsPage() {
                                     {/* Project Image */}
                                     {project.imageUrl && (
                                         <div className="project-image-container">
-                                            <img src={project.imageUrl} alt={`${project.name} preview`} className="project-image" />
+                                            <img
+                                                src={project.imageUrl}
+                                                alt={`${project.name} preview`}
+                                                className="project-image"
+                                                loading="lazy"
+                                                decoding="async"
+                                            />
                                         </div>
                                     )}
                                 </div>
@@ -86,7 +88,5 @@ export function ProjectsPage() {
                     </div>
                 </div>
             </main>
-            <Footer />
-        </>
     );
 }

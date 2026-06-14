@@ -1,5 +1,3 @@
-import { Header } from '../components/Header/Header';
-import { Footer } from '../components/Footer/Footer';
 import { TeamMemberCard } from '../components/TeamMemberCard/TeamMemberCard';
 import './TeamPage.css';
 
@@ -142,8 +140,6 @@ const departments = [
 
 export function TeamPage() {
     return (
-        <>
-            <Header />
             <main className="team-page">
                 {/* Background gradient overlay */}
                 <div className="team-bg-gradient">
@@ -152,7 +148,7 @@ export function TeamPage() {
 
                 <div className="team-container">
                     {/* Page Title */}
-                    <div className="team-header">
+                    <div className="team-header" data-reveal>
                         <h1 className="team-title">
                             <span className="highlight">Our Team</span>
                         </h1>
@@ -164,7 +160,7 @@ export function TeamPage() {
                     {/* Department Sections */}
                     <div className="team-sections">
                         {departments.map((dept) => (
-                            <section key={dept.title} className="department-section">
+                            <section key={dept.title} className="department-section" data-reveal>
                                 <h2 className="department-title">{dept.title}</h2>
                                 <div className="department-grid">
                                     {dept.members.map((member, index) => (
@@ -182,7 +178,5 @@ export function TeamPage() {
                     </div>
                 </div>
             </main>
-            <Footer />
-        </>
     );
 }

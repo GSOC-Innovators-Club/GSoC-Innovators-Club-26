@@ -29,7 +29,7 @@ export function AboutSection() {
         <section className="about-section" id="about">
             <div className="about-container">
                 {/* Section Title */}
-                <div className="about-title-container">
+                <div className="about-title-container" data-reveal>
                     <h2 className="about-title">
                         About <span className="highlight">Us</span>
                     </h2>
@@ -42,7 +42,7 @@ export function AboutSection() {
                 {/* Info Cards */}
                 <div className="info-cards">
                     {infoCards.map((card, index) => (
-                        <div key={index} className="info-card">
+                        <div key={index} className="info-card" data-reveal>
                             <div className="info-card-content">
                                 <img src={card.icon} alt={card.stat} className="info-card-icon" />
                                 <span className="info-card-stat">{card.stat}</span>
