@@ -18,21 +18,21 @@ function App() {
   return (
     <ModalProvider>
       <BrowserRouter>
-        <ScrollToTop />
-        <RevealOnScroll />
-        <Header />
         <Suspense fallback={<PageLoader />}>
+          <ScrollToTop />
+          <RevealOnScroll />
+          <Header />
           <div className="route-content">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/team" element={<TeamPage />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/events" element={<EventsPage />} />
-              <Route path="/opensource" element={<OpenSourcePage />} />
-            </Routes>
-          </div>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/team" element={<TeamPage />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/events" element={<EventsPage />} />
+                <Route path="/opensource" element={<OpenSourcePage />} />
+              </Routes>
+            </div>
+          <Footer />
         </Suspense>
-        <Footer />
       </BrowserRouter>
     </ModalProvider>
   );

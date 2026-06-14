@@ -46,7 +46,7 @@
   /* Motion */
   --motion-duration-fast: 180ms;
   --motion-duration-base: 300ms;
-  --motion-duration-page: 420ms;
+  --motion-duration-page: 280ms;
   --motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
   --motion-distance-page: 18px;
 }
