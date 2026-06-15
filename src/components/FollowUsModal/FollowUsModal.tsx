@@ -24,7 +24,7 @@ const platforms = [
     {
         name: 'Discord',
         icon: '/Icons/Discord_Logo.svg',
-        url: 'https://discord.gg/your-link-here'
+        url: 'https://discord.gg/e7bqYG58Y'
     }
 ];
 
