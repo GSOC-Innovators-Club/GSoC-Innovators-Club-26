@@ -101,7 +101,7 @@ export function AboutSection() {
         <section className="about-section" id="about">
             <div className="about-container">
                 {/* Section Title */}
-                <div className="about-title-container">
+                <div className="about-title-container" data-reveal>
                     <h2 className="about-title">
                         About <span className="highlight">Us</span>
                     </h2>

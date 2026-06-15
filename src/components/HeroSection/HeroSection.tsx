@@ -1,9 +1,9 @@
-import { useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import './HeroSection.css';
 import { NebulaSphere } from './NebulaSphere';
 import { FloatingCard } from './FloatingCard';
 import { useScrollAnimation } from './useScrollAnimation';
-import { useModal } from '../../context/ModalContext';
+import { useModal } from '../../context/useModal';
 
 const floatingCards = [
     {
@@ -36,6 +36,10 @@ export function HeroSection() {
     const heroRef = useRef<HTMLElement>(null);
     const { scrollProgress } = useScrollAnimation(heroRef, 600);
     const { openFollowModal } = useModal();
+    const [nebulaState, setNebulaState] = useState<'loading' | 'ready' | 'error'>('loading');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const handleNebulaReady = useCallback(() => setNebulaState('ready'), []);
+    const handleNebulaError = useCallback(() => setNebulaState('error'), []);
 
     // Calculate text animation values based on scroll progress
     const textOpacity = Math.max(0, 1 - scrollProgress * 2); // Fade out in first half
@@ -45,8 +49,24 @@ export function HeroSection() {
     return (
         <section ref={heroRef} className="hero-section">
             {/* Nebula Background */}
-            <div className="nebula-container">
-                <NebulaSphere scrollProgress={scrollProgress} />
+            <div className={`nebula-container nebula-${nebulaState}`}>
+                {nebulaState !== 'error' && (
+                    <div className="nebula-canvas">
+                        <NebulaSphere
+                            scrollProgress={scrollProgress}
+                            onReady={handleNebulaReady}
+                            onError={handleNebulaError}
+                            reduceMotion={reduceMotion}
+                        />
+                    </div>
+                )}
+                <div className="nebula-fallback" aria-hidden="true" />
+                {nebulaState === 'loading' && (
+                    <div className="nebula-loader" role="status">
+                        <span className="nebula-loader-core" aria-hidden="true" />
+                        <span className="sr-only">Loading animated background</span>
+                    </div>
+                )}
             </div>
 
             {/* Overlay Gradients */}

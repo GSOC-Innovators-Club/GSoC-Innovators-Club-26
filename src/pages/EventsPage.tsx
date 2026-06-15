@@ -1,5 +1,3 @@
-import { Header } from '../components/Header/Header';
-import { Footer } from '../components/Footer/Footer';
 import './EventsPage.css';
 import '../components/EventsSection/EventsSection.css';
 
@@ -37,8 +35,6 @@ const events: EventData[] = [
 
 export function EventsPage() {
     return (
-        <>
-            <Header />
             <main className="events-page">
                 {/* Background gradient overlay */}
                 <div className="events-bg-gradient">
@@ -47,7 +43,7 @@ export function EventsPage() {
 
                 <div className="events-page-container">
                     {/* Page Title */}
-                    <div className="events-page-header">
+                    <div className="events-page-header" data-reveal>
                         <h1 className="events-page-title">
                             <span className="highlight">Our Events</span>
                         </h1>
@@ -59,7 +55,7 @@ export function EventsPage() {
                     {/* Events List */}
                     <div className="events-list">
                         {events.map((event, index) => (
-                            <article key={index} className="event-card">
+                            <article key={index} className="event-card" data-reveal>
                                 <div className="event-card-inner">
                                     {/* Event Content */}
                                     <div className="event-content">
@@ -109,7 +105,13 @@ export function EventsPage() {
                                     {/* Event Poster */}
                                     <div className="event-poster">
                                         {event.posterUrl ? (
-                                            <img src={event.posterUrl} alt="Event Poster" className="poster-image" />
+                                            <img
+                                                src={event.posterUrl}
+                                                alt="Event Poster"
+                                                className="poster-image"
+                                                loading="lazy"
+                                                decoding="async"
+                                            />
                                         ) : (
                                             <span className="poster-placeholder">Event Poster</span>
                                         )}
@@ -119,7 +121,7 @@ export function EventsPage() {
                         ))}
                     </div>
                     <div className="events-list justify-center">
-                        <div className="event-card upcoming-event">
+                        <div className="event-card upcoming-event" data-reveal>
                             <div className="event-element">
                                 <img src="/Icons/Event-DownMark.svg" alt="Event marker" className="event-element-dot" />
                                 <div className="event-element-line" />
@@ -130,7 +132,5 @@ export function EventsPage() {
                     </div>
                 </div>
             </main>
-            <Footer />
-        </>
     );
 }

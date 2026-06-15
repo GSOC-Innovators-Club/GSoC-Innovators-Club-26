@@ -31,15 +31,15 @@ const events = [
 const OpenSourceEvents: React.FC = () => {
   return (
     <section className="open-source-events">
-      <h2 className="section-title">
+      <h2 className="section-title" data-reveal>
           <span className="highlight">Open Source</span>
       </h2>
-      <p className="section-subtitle">
+      <p className="section-subtitle" data-reveal>
         Participate in leading open source events, contribute to impactful projects, and accelerate your skills.
       </p>
       <div className="events-list">
         {events.map((event, index) => (
-          <div key={index} className="event-item">
+          <div key={index} className="event-item" data-reveal>
             <h3 className="event-name">
               <img src="/Icons/GSOC-Icon.svg" alt="diamond" className="event-icon" />
               {event.name}

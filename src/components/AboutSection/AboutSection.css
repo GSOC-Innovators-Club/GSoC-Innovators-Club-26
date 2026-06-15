@@ -192,3 +192,11 @@
         min-height: 240px;
     }
 }
+
+.info-card:nth-child(2) {
+    --reveal-delay: 90ms;
+}
+
+.info-card:nth-child(3) {
+    --reveal-delay: 180ms;
+}

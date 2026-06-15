@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
 import { FollowUsModal } from '../FollowUsModal/FollowUsModal';
-import { useModal } from '../../context/ModalContext';
+import { useModal } from '../../context/useModal';
 import './Header.css';
 
 const navLinks = [
@@ -36,14 +36,15 @@ export function Header() {
                 </button>
                 {/* Club Branding */}
                 <div className="branding">
-                    <Link to="/">
+                    <Link to="/" viewTransition>
                         <img
                             src="/Logos/ClubLogo.png"
                             alt="GSoC Innovators Club Logo"
                             className="club-logo"
+                            decoding="async"
                         />
                     </Link>
-                    <Link to="/" className="brand-name">
+                    <Link to="/" className="brand-name" viewTransition>
                         GSoC{'\n'}Innovators{'\n'}Club
                     </Link>
                 </div>
@@ -53,7 +54,7 @@ export function Header() {
                     {navLinks.map((link, index) => (
                         <div key={link.label} style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                             {link.isRoute ? (
-                                <Link to={link.href} className="nav-link">
+                                <Link to={link.href} className="nav-link" viewTransition>
                                     {link.label}
                                 </Link>
                             ) : (
@@ -82,6 +83,7 @@ export function Header() {
                         src="/Logos/VITB_White_No_BG.png"
                         alt="VIT Bhopal University"
                         className="vitb-logo"
+                        decoding="async"
                     />
                 </a>
             </nav>

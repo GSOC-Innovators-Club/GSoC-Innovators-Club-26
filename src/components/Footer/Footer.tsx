@@ -20,6 +20,8 @@ export function Footer() {
                                 src="/Logos/ClubLogo.png"
                                 alt="GSoC Innovators Club"
                                 className="footer-logo"
+                                loading="lazy"
+                                decoding="async"
                             />
                             <span className="footer-brand-name">
                                 GSoC{'\n'}Innovators{'\n'}Club
@@ -61,6 +63,8 @@ export function Footer() {
                                 src="/Logos/VITB_White_No_BG.png"
                                 alt="VIT Bhopal University"
                                 className="footer-vitb-logo"
+                                loading="lazy"
+                                decoding="async"
                             />
                         </a>
                         </div>

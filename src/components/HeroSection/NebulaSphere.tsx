@@ -7,6 +7,9 @@ import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
 
 interface NebulaSphereProps {
     scrollProgress?: number;
+    onReady?: () => void;
+    onError?: () => void;
+    reduceMotion?: boolean;
 }
 
 // Camera animation keyframes
@@ -20,7 +23,12 @@ const CAMERA_END = {
     lookAt: new THREE.Vector3(0, -6, 0) // Look at nebula center
 };
 
-export function NebulaSphere({ scrollProgress = 0 }: NebulaSphereProps) {
+export function NebulaSphere({
+    scrollProgress = 0,
+    onReady,
+    onError,
+    reduceMotion = false,
+}: NebulaSphereProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const scrollProgressRef = useRef(scrollProgress);
 
@@ -44,6 +52,19 @@ export function NebulaSphere({ scrollProgress = 0 }: NebulaSphereProps) {
 
     useEffect(() => {
         if (!containerRef.current) return;
+        const container = containerRef.current;
+
+        const testCanvas = document.createElement('canvas');
+        const hasWebGl = Boolean(
+            testCanvas.getContext('webgl2')
+            || testCanvas.getContext('webgl')
+            || testCanvas.getContext('experimental-webgl'),
+        );
+
+        if (!hasWebGl) {
+            onError?.();
+            return;
+        }
 
         // Scene Setup
         const scene = new THREE.Scene();
@@ -51,7 +72,7 @@ export function NebulaSphere({ scrollProgress = 0 }: NebulaSphereProps) {
 
         const camera = new THREE.PerspectiveCamera(
             50,
-            containerRef.current.clientWidth / containerRef.current.clientHeight,
+            container.clientWidth / container.clientHeight,
             0.1,
             500
         );
@@ -60,11 +81,18 @@ export function NebulaSphere({ scrollProgress = 0 }: NebulaSphereProps) {
         camera.position.set(0, 0, 20);
         camera.lookAt(0, 0, 0); // Look at center, nebula is below this point
 
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+        let renderer: THREE.WebGLRenderer;
+
+        try {
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        } catch {
+            onError?.();
+            return;
+        }
+        renderer.setSize(container.clientWidth, container.clientHeight);
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
         renderer.toneMappingExposure = 1.2;
-        containerRef.current.appendChild(renderer.domElement);
+        container.appendChild(renderer.domElement);
 
         const controls = new OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true;
@@ -79,7 +107,7 @@ export function NebulaSphere({ scrollProgress = 0 }: NebulaSphereProps) {
         composer.addPass(new RenderPass(scene, camera));
 
         const bloomPass = new UnrealBloomPass(
-            new THREE.Vector2(containerRef.current.clientWidth, containerRef.current.clientHeight),
+            new THREE.Vector2(container.clientWidth, container.clientHeight),
             1.25,
             0.8,
             0.3
@@ -330,8 +358,9 @@ export function NebulaSphere({ scrollProgress = 0 }: NebulaSphereProps) {
         const tempPosition = new THREE.Vector3();
         const tempLookAt = new THREE.Vector3();
 
-        function animate() {
-            const animationId = requestAnimationFrame(animate);
+        let hasRendered = false;
+
+        function renderFrame() {
             const time = clock.getElapsedTime();
             const progress = scrollProgressRef.current;
 
@@ -359,6 +388,19 @@ export function NebulaSphere({ scrollProgress = 0 }: NebulaSphereProps) {
             controls.update();
             composer.render();
 
+            if (!hasRendered) {
+                hasRendered = true;
+                onReady?.();
+            }
+        }
+
+        function animate() {
+            const animationId = requestAnimationFrame(animate);
+
+            if (!document.hidden) {
+                renderFrame();
+            }
+
             if (sceneRef.current) {
                 sceneRef.current.animationId = animationId;
             }
@@ -377,17 +419,21 @@ export function NebulaSphere({ scrollProgress = 0 }: NebulaSphereProps) {
             animationId: 0
         };
 
-        animate();
+        if (reduceMotion) {
+            renderFrame();
+        } else {
+            animate();
+        }
 
         // Resize handler
         const handleResize = () => {
-            if (!containerRef.current || !sceneRef.current) return;
+            if (!sceneRef.current) return;
 
             const { camera, renderer, composer } = sceneRef.current;
-            camera.aspect = containerRef.current.clientWidth / containerRef.current.clientHeight;
+            camera.aspect = container.clientWidth / container.clientHeight;
             camera.updateProjectionMatrix();
-            renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
-            composer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            composer.setSize(container.clientWidth, container.clientHeight);
         };
 
         window.addEventListener('resize', handleResize);
@@ -400,11 +446,11 @@ export function NebulaSphere({ scrollProgress = 0 }: NebulaSphereProps) {
                 sceneRef.current.renderer.dispose();
                 sceneRef.current.composer.dispose();
             }
-            if (containerRef.current && renderer.domElement) {
-                containerRef.current.removeChild(renderer.domElement);
+            if (renderer.domElement.parentNode === container) {
+                container.removeChild(renderer.domElement);
             }
         };
-    }, []);
+    }, [onError, onReady, reduceMotion]);
 
     return <div ref={containerRef} style={{ width: '100%', height: '100%' }} />;
 }

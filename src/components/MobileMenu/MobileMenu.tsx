@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useModal } from '../../context/ModalContext';
+import { useModal } from '../../context/useModal';
 import './MobileMenu.css';
 
 interface MobileMenuProps {
@@ -12,6 +12,7 @@ const mobileNavLinks = [
     { label: 'About Us', href: '/#about', icon: '/Icons/Home Icon.svg', isRoute: false }, // Add this line
     { label: 'Team', href: '/team', icon: '/Icons/GroupIcon.svg', isRoute: true },
     { label: 'Projects', href: '/projects', icon: '/Icons/Projects.svg', isRoute: true },
+    { label: 'Open Source', href: '/opensource', icon: '/Icons/GSOC-Icon.svg', isRoute: true },
     { label: 'Events', href: '/events', icon: '/Icons/Calender.svg', isRoute: true },
     { label: 'Follow Us', href: '#follow', icon: '/Icons/Social Icon.svg', isRoute: false },
 ];
@@ -50,7 +51,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                         {mobileNavLinks.map((link) => (
                             <div key={link.label} className="mobile-nav-container">
                                 {link.isRoute ? (
-                                    <Link to={link.href} className="mobile-nav-item" onClick={onClose}>
+                                    <Link to={link.href} className="mobile-nav-item" onClick={onClose} viewTransition>
                                         <img src={link.icon} alt="" className="mobile-nav-icon" />
                                         <span className="mobile-nav-separator">//</span>
                                         <span className="mobile-nav-text">{link.label}</span>
