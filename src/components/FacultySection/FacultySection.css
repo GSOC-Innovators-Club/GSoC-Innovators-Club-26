@@ -1,0 +1,225 @@
+/* ===== FACULTY SECTION ===== */
+.faculty-section {
+    position: relative;
+    width: 100%;
+    padding: var(--spacing-xl) 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.faculty-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xl);
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 var(--spacing-lg);
+    z-index: 2;
+}
+
+/* Section Title */
+.faculty-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-align: center;
+}
+
+.faculty-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+.faculty-title .highlight {
+    background: linear-gradient(#008BFF 9%, #FF00B8 99%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.faculty-subtitle {
+    font-family: var(--font-body);
+    font-size: 20px;
+    color: var(--color-text-secondary);
+    max-width: 560px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* ===== TILTED CARD STYLES ===== */
+
+/* Perspective boundary for the 3D effect */
+.tilted-card-wrapper {
+    perspective: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 24px 0;
+}
+
+/* The actual rotating card */
+.tilted-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    background: linear-gradient(135deg, rgba(53, 5, 126, 0.4), rgba(10, 1, 24, 0.7));
+    border: 1px solid rgba(159, 83, 255, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 56px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-style: preserve-3d; /* CRITICAL: Enables nested 3D elements */
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    cursor: pointer;
+    will-change: transform;
+}
+
+/* Ambient glow around the card */
+.tilted-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(159, 83, 255, 0.5), rgba(255, 0, 184, 0.1));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* Dynamic Glare Layer */
+.tilted-card-glare {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: 1;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+/* Parallax Content Container - lifts off the card background */
+.tilted-card-content {
+    transform: translateZ(60px); /* Pushes the content forward in 3D space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Faculty Photo Setup */
+.faculty-photo-ring {
+    position: relative;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, #9f53ff, #ff00b8);
+    box-shadow: 0 12px 32px rgba(159, 83, 255, 0.4);
+    
+    /* Helps prevent 3D rendering background bleed */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.tilted-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #0e0c15;
+    border: 4px solid #0e0c15;
+    display: block;
+    
+    clip-path: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(1px); 
+}
+
+.faculty-badge {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #9f53ff, #ff00b8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #0e0c15;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.faculty-badge img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Text Content */
+.tilted-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.tilted-role {
+    font-family: var(--font-brand);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--color-accent-purple);
+    background: rgba(159, 83, 255, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(159, 83, 255, 0.2);
+}
+
+.tilted-name {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.2;
+    margin-top: 4px;
+}
+
+/* Responsive Scaling */
+@media (max-width: 768px) {
+    .faculty-title {
+        font-size: 32px;
+    }
+
+    .faculty-subtitle {
+        font-size: 16px;
+    }
+
+    .tilted-card {
+        padding: 48px 32px;
+        max-width: 320px;
+    }
+
+    .tilted-photo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .tilted-name {
+        font-size: 28px;
+    }
+}

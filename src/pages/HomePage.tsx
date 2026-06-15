@@ -1,7 +1,9 @@
 import { Header } from '../components/Header/Header';
 import { HeroSection } from '../components/HeroSection/HeroSection';
 import { AboutSection } from '../components/AboutSection/AboutSection';
-import { EventsSection } from '../components/EventsSection/EventsSection';
+import { AimSection } from '../components/AimSection/AimSection';
+import { FacultySection } from '../components/FacultySection/FacultySection';
+import { CommunitySection } from '../components/CommunitySection/CommunitySection';
 import { Footer } from '../components/Footer/Footer';
 
 export function HomePage() {
@@ -11,7 +13,10 @@ export function HomePage() {
             <main>
                 <HeroSection />
                 <AboutSection />
-                <EventsSection />
+                <AimSection />
+                {/* <EventsSection /> */}
+                <FacultySection />
+                <CommunitySection />
             </main>
             <Footer />
         </>

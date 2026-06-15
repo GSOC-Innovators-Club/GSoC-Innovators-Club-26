@@ -6,6 +6,7 @@ import { useModal } from '../../context/ModalContext';
 import './Header.css';
 
 const navLinks = [
+    { label: 'About Us', href: '/#about', isRoute: false }, // Add this line
     { label: 'Team', href: '/team', isRoute: true },
     { label: 'Projects', href: '/projects', isRoute: true },
     { label: 'Open Source', href: '/opensource', isRoute: true },
