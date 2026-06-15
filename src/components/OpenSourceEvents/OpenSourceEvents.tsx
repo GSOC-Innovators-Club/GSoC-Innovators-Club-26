@@ -8,7 +8,7 @@ const events = [
     deadline: 'March 30, 2026',
     duration: '1st April - 30th April',
     organization: 'Nexus',
-    link: 'https://nexus-soc.github.io/',
+    link: 'https://www.nsoc.in/',
   },
   {
     name: 'Google Summer of Code',
