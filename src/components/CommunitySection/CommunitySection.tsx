@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { useModal } from '../../context/ModalContext';
+import { useModal } from '../../context/useModal';
 import './CommunitySection.css';
 
 interface PlatformData {
