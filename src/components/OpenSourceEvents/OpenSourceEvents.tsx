@@ -31,45 +31,74 @@ const events = [
 const OpenSourceEvents: React.FC = () => {
   return (
     <section className="open-source-events">
-      <h2 className="section-title" data-reveal>
-          <span className="highlight">Open Source</span>
-      </h2>
-      <p className="section-subtitle" data-reveal>
-        Participate in leading open source events, contribute to impactful projects, and accelerate your skills.
-      </p>
-      <div className="events-list">
-        {events.map((event, index) => (
-          <div key={index} className="event-item" data-reveal>
-            <h3 className="event-name">
-              <img src="/Icons/GSOC-Icon.svg" alt="diamond" className="event-icon" />
-              {event.name}
-            </h3>
-            <div className="event-detail-section">
-              <h4><img src="/Icons/Home Icon.svg" alt="description" className="detail-icon" /> Description</h4>
-              <p>{event.description}</p>
-            </div>
-            <div className="event-detail-section">
-              <h4><img src="/Icons/Calender.svg" alt="calendar" className="detail-icon" /> Registration</h4>
-              <p>{event.deadline}</p>
-            </div>
-            <div className="event-detail-section">
-              <h4><img src="/Icons/Calender.svg" alt="clock" className="detail-icon" /> Duration</h4>
-              <p>{event.duration}</p>
-            </div>
-            <div className="event-detail-section">
-              <h4><img src="/Icons/GroupIcon.svg" alt="organization" className="detail-icon" /> Organization</h4>
-              <p>{event.organization}</p>
-            </div>
-            <a
-              href={event.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="register-button"
-            >
-              Register Now
-            </a>
-          </div>
-        ))}
+      <div className="open-source-page-container">
+        <div className="open-source-page-header" data-reveal>
+          <h1 className="open-source-page-title">
+            <span className="highlight">Open Source</span>
+          </h1>
+          <p className="open-source-page-subtitle">
+            Participate in leading open source events, contribute to impactful projects, and accelerate your skills.
+          </p>
+        </div>
+
+        <div className="open-source-list">
+          {events.map((event) => (
+            <article key={event.name} className="open-source-card" data-reveal>
+              <div className="open-source-card-header">
+                <div className="open-source-event-icon">
+                  <img src="/Icons/GSOC-Icon.svg" alt="" />
+                </div>
+                <div>
+                  <p className="open-source-card-label">Open Source Program</p>
+                  <h2 className="open-source-event-name">{event.name}</h2>
+                </div>
+              </div>
+
+              <div className="open-source-card-content">
+                <div className="open-source-detail open-source-description">
+                  <h3>
+                    <img src="/Icons/Home Icon.svg" alt="" />
+                    Description
+                  </h3>
+                  <p>{event.description}</p>
+                </div>
+
+                <div className="open-source-meta-grid">
+                  <div className="open-source-detail">
+                    <h3>
+                      <img src="/Icons/Calender.svg" alt="" />
+                      Registration
+                    </h3>
+                    <p>{event.deadline}</p>
+                  </div>
+                  <div className="open-source-detail">
+                    <h3>
+                      <img src="/Icons/Calender.svg" alt="" />
+                      Duration
+                    </h3>
+                    <p>{event.duration}</p>
+                  </div>
+                  <div className="open-source-detail">
+                    <h3>
+                      <img src="/Icons/GroupIcon.svg" alt="" />
+                      Organization
+                    </h3>
+                    <p>{event.organization}</p>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href={event.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="open-source-register-button"
+              >
+                Register Now
+              </a>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

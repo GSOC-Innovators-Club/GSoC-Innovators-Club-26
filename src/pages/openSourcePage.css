@@ -6,6 +6,7 @@
     padding-bottom: 80px;
     overflow: hidden;
 }
+
 .open-source-page-bg-gradient {
     position: fixed;
     top: 0;
@@ -22,13 +23,18 @@
     mask-image: radial-gradient(circle at center, black 30%, transparent 45%);
 }
 
-.events-bg-gradient img {
+.open-source-page-bg-gradient img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
 }
 
 .open-source-events {
     position: relative;
-    z-index: 2;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .open-source-page {
+        padding-top: 100px;
+    }
 }
