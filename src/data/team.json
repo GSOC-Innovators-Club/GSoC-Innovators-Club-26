@@ -45,7 +45,7 @@
         {
           "name": "Ashish Raj",
           "role": "Club President",
-          "image": "public/Administration/ASHISH.png",
+          "image": "/Administration/ASHISH.png",
           "socials": [
             { "platform": "linkedin", "url": "https://www.linkedin.com/in/ashish-raj-504760319/" }
           ]
@@ -53,13 +53,13 @@
         {
           "name": "Raunit Kumar Singh",
           "role": "General Secretary",
-          "image": "public/Administration/RAUNIT.png",
+          "image": "/Administration/RAUNIT.png",
           "socials": []
         },
         {
           "name": "Apoorva Singh",
           "role": "Assitant General Secretary",
-          "image": "public/Administration/Apoorva Singh - EVENT MANGEMENT.png",
+          "image": "/Administration/Apoorva Singh - EVENT MANGEMENT.png",
           "socials": []
         }
       ]
@@ -70,7 +70,7 @@
         {
           "name": "Bindupautra Jyotibrat",
           "role": "Tech Lead",
-          "image": "public/Technical Team/Bindupautra Jyotibrat.jpg",
+          "image": "/Technical Team/Bindupautra Jyotibrat.jpg",
           "socials": [
             { "platform": "github", "url": "https://github.com/jyotibrat" },
             { "platform": "linkedin", "url": "https://linkedin.com/in/jyotibrat" }
@@ -79,55 +79,55 @@
         {
           "name": "Abhishek",
           "role": "Team Member",
-          "image": "public/Technical Team/Tech Team - ABHISHEK.jpg",
+          "image": "/Technical Team/Tech Team - ABHISHEK.jpg",
           "socials": []
         },
         {
           "name": "Aniket Kumar",
           "role": "Team Member",
-          "image": "public/Technical Team/Tech Team - ANIKET KUMAR.jpg",
+          "image": "/Technical Team/Tech Team - ANIKET KUMAR.jpg",
           "socials": []
         },
         {
           "name": "Fatema Saify",
           "role": "Team Member",
-          "image": "public/Technical Team/Tech Team - FATEMA SAIFY.JPG",
+          "image": "/Technical Team/Tech Team - FATEMA SAIFY.JPG",
           "socials": []
         },
         {
           "name": "Manvendra Vikram Singh",
           "role": "Team Member",
-          "image": "public/Technical Team/Tech Team - MANVENDRA VIKRAM SINGH.jpg",
+          "image": "/Technical Team/Tech Team - MANVENDRA VIKRAM SINGH.jpg",
           "socials": []
         },
         {
           "name": "Nikhil Patil",
           "role": "Team Member",
-          "image": "public/Technical Team/Tech Team - Nikhil Patil.jpg",
+          "image": "/Technical Team/Tech Team - Nikhil Patil.jpg",
           "socials": []
         },
         {
           "name": "Pari Goel",
           "role": "Team Member",
-          "image": "public/Technical Team/Tech Team - PARI GOEL.jpeg",
+          "image": "/Technical Team/Tech Team - PARI GOEL.jpeg",
           "socials": []
         },
         {
           "name": "Rishi Dewangan",
           "role": "Team Member",
-          "image": "public/Technical Team/Tech Team - RISHI DEWANGAN.png",
+          "image": "/Technical Team/Tech Team - RISHI DEWANGAN.png",
           "socials": []
         },
         {
           "name": "Utkarsh Singh",
           "role": "Team Member",
-          "image": "public/Technical Team/Tech Team - UTKARSH SINGH.jpg",
+          "image": "/Technical Team/Tech Team - UTKARSH SINGH.jpg",
           "socials": []
         },
         {
           "name": "Varun Kuswah",
           "role": "Team Member",
-          "image": "public/Technical Team/Tech Team - VARUN KUSWAH.jpg",
+          "image": "/Technical Team/Tech Team - VARUN KUSWAH.jpg",
           "socials": []
         }
       ]
@@ -138,67 +138,67 @@
         {
           "name": "Shraddha Sinha",
           "role": "Event Management Lead",
-          "image": "public/Event Management Team/Shraddha Sinha 1- EVENT MANGEMENT.png",
+          "image": "/Event Management Team/Shraddha Sinha 1- EVENT MANGEMENT.png",
           "socials": []
         },
         {
           "name": "Ananya Sharma",
           "role": "Event Management Co-Lead",
-          "image": "public/Event Management Team/ANANYA SHARMA - EVENT MANGEMENT.png",
+          "image": "/Event Management Team/ANANYA SHARMA - EVENT MANGEMENT.png",
           "socials": []
         },
         {
           "name": "Abhinav Kumar Mishra",
           "role": "Team Member",
-          "image": "public/Event Management Team/Abhinav Kumar Mishra - EVENT MANGEMENT.png",
+          "image": "/Event Management Team/Abhinav Kumar Mishra - EVENT MANGEMENT.png",
           "socials": []
         },
         {
           "name": "Adhya Sparsh",
           "role": "Team Member",
-          "image": "public/Event Management Team/Adhya Sparsh- event management.png",
+          "image": "/Event Management Team/Adhya Sparsh- event management.png",
           "socials": []
         },
         {
           "name": "Aashish Prasad",
           "role": "Team Member",
-          "image": "public/Event Management Team/Event - AASHISH PRASAD.jpg",
+          "image": "/Event Management Team/Event - AASHISH PRASAD.jpg",
           "socials": []
         },
         {
           "name": "Aditi Jha",
           "role": "Team Member",
-          "image": "public/Event Management Team/Event - Aditi Jha.jpg",
+          "image": "/Event Management Team/Event - Aditi Jha.jpg",
           "socials": []
         },
         {
           "name": "Alankrit Sajwan",
           "role": "Team Member",
-          "image": "public/Event Management Team/Event - Alankrit Sajwan.jpg",
+          "image": "/Event Management Team/Event - Alankrit Sajwan.jpg",
           "socials": []
         },
         {
           "name": "Aman Mishra",
           "role": "Team Member",
-          "image": "public/Event Management Team/Event - Aman Mishra.png",
+          "image": "/Event Management Team/Event - Aman Mishra.png",
           "socials": []
         },
         {
           "name": "Manasvi Shrivastava",
           "role": "Team Member",
-          "image": "public/Event Management Team/Event - MANASVI SHRIVASTAVA.jpg",
+          "image": "/Event Management Team/Event - MANASVI SHRIVASTAVA.jpg",
           "socials": []
         },
         {
           "name": "Rishi Singh Shandilya",
           "role": "Team Member",
-          "image": "public/Event Management Team/Event - Rishi Singh Shandilya.jpg",
+          "image": "/Event Management Team/Event - Rishi Singh Shandilya.jpg",
           "socials": []
         },
         {
           "name": "Venya Rajput",
           "role": "Team Member",
-          "image": "public/Event Management Team/Venya Rajput  - EVENT MANGEMENT.png",
+          "image": "/Event Management Team/Venya Rajput  - EVENT MANGEMENT.png",
           "socials": []
         }
       ]
@@ -209,7 +209,7 @@
         {
           "name": "Bindupautra Jyotibrat",
           "role": "Research Lead",
-          "image": "public/Technical Team/Bindupautra Jyotibrat.jpg",
+          "image": "/Technical Team/Bindupautra Jyotibrat.jpg",
           "socials": [
             { "platform": "github", "url": "https://github.com/jyotibrat" },
             { "platform": "linkedin", "url": "https://linkedin.com/in/jyotibrat" }
@@ -218,13 +218,13 @@
         {
           "name": "Arun Chaudhary",
           "role": "Research Co-Lead",
-          "image": "public/Research Team/Research - Arun Chaudhary.png",
+          "image": "/Research Team/Research - Arun Chaudhary.png",
           "socials": []
         },
         {
           "name": "Aryan Kumar",
           "role": "Team Member",
-          "image": "public/Research Team/Research - ARYAN KUMAR.jpg",
+          "image": "/Research Team/Research - ARYAN KUMAR.jpg",
           "socials": []
         },
         {
@@ -235,7 +235,7 @@
         {
           "name": "Tanisha Deshpande",
           "role": "Team Member",
-          "image": "public/Research Team/Research Team - Tanisha Deshpande.jpg",
+          "image": "/Research Team/Research Team - Tanisha Deshpande.jpg",
           "socials": []
         }
       ]
@@ -246,31 +246,31 @@
         {
           "name": "Shreya Praksh",
           "role": "Content Lead",
-          "image": "public/Content Team/SHREYA PRAKSH - CONTENT TEAM.png",
+          "image": "/Content Team/SHREYA PRAKSH - CONTENT TEAM.png",
           "socials": []
         },
         {
           "name": "Shreyansh Srivastava",
           "role": "Content Co-Lead",
-          "image": "public/Content Team/Content - SHREYANSH SRIVASTAVA.jpg",
+          "image": "/Content Team/Content - SHREYANSH SRIVASTAVA.jpg",
           "socials": []
         },
         {
           "name": "Kanishka Arora",
           "role": "Team Member",
-          "image": "public/Content Team/Content - KANISHKA ARORA.png",
+          "image": "/Content Team/Content - KANISHKA ARORA.png",
           "socials": []
         },
         {
           "name": "Riddhi Garg",
           "role": "Team Member",
-          "image": "public/Content Team/Content - Riddhi Garg.jpg",
+          "image": "/Content Team/Content - Riddhi Garg.jpg",
           "socials": []
         },
         {
           "name": "Tanisha Sharma",
           "role": "Team Member",
-          "image": "public/Content Team/Content - TANISHA SHARMA.jpg",
+          "image": "/Content Team/Content - TANISHA SHARMA.jpg",
           "socials": []
         }
       ]
@@ -281,25 +281,25 @@
         {
           "name": "Diya Tanwani",
           "role": "Design Lead",
-          "image": "public/Design Team/Diya tanwani - event mangement.png",
+          "image": "/Design Team/Diya tanwani - event mangement.png",
           "socials": []
         },
         {
           "name": "Vismay Jaiswal",
           "role": "Design Co-Lead",
-          "image": "public/Design Team/Design - VISMAY JAISWAL.jpg",
+          "image": "/Design Team/Design - VISMAY JAISWAL.jpg",
           "socials": []
         },
         {
           "name": "Deeksha Kaushal",
           "role": "Team Member",
-          "image": "public/Design Team/Design - Deeksha Kaushal.jpg",
+          "image": "/Design Team/Design - Deeksha Kaushal.jpg",
           "socials": []
         },
         {
           "name": "Varsha Lavania",
           "role": "Team Member",
-          "image": "public/Design Team/Design - VARSHA LAVANIA.jpg",
+          "image": "/Design Team/Design - VARSHA LAVANIA.jpg",
           "socials": []
         }
       ]
@@ -310,31 +310,31 @@
         {
           "name": "Tejas Tandon",
           "role": "Finance Lead",
-          "image": "public/Finance Team/TEJAS TANDON.png",
+          "image": "/Finance Team/TEJAS TANDON.png",
           "socials": []
         },
         {
           "name": "Mishti Singh",
           "role": "Finance Co-Lead",
-          "image": "public/Finance Team/Mishti Singh.png",
+          "image": "/Finance Team/Mishti Singh.png",
           "socials": []
         },
         {
           "name": "Joydeep Samanta",
           "role": "Team Member",
-          "image": "public/Finance Team/Finance - JOYDEEP SAMANTA.jpg",
+          "image": "/Finance Team/Finance - JOYDEEP SAMANTA.jpg",
           "socials": []
         },
         {
           "name": "Parth Mulik",
           "role": "Team Member",
-          "image": "public/Finance Team/Finance - PARTH MULIK.jpg",
+          "image": "/Finance Team/Finance - PARTH MULIK.jpg",
           "socials": []
         },
         {
           "name": "Rohit Dubey",
           "role": "Team Member",
-          "image": "public/Finance Team/Finance - Rohit Dubey.jpg",
+          "image": "/Finance Team/Finance - Rohit Dubey.jpg",
           "socials": []
         }
       ]
@@ -345,7 +345,7 @@
         {
           "name": "Shreya Raj",
           "role": "Team Member",
-          "image": "public/Human Resource Team/Shreya Raj.png",
+          "image": "/Human Resource Team/Shreya Raj.png",
           "socials": []
         }
       ]
@@ -356,19 +356,19 @@
         {
           "name": "Atiksh Prasad",
           "role": "PR and Outreach Lead",
-          "image": "public/PR and Outreach Team/PR - ATIKSH PRASAD.png",
+          "image": "/PR and Outreach Team/PR - ATIKSH PRASAD.png",
           "socials": []
         },
         {
           "name": "Akshat Pradeep Pillai",
           "role": "PR and Outreach Co-Lead",
-          "image": "public/PR and Outreach Team/PR - AKSHAT PRADEEP PILLAI.jpg",
+          "image": "/PR and Outreach Team/PR - AKSHAT PRADEEP PILLAI.jpg",
           "socials": []
         },
         {
           "name": "Saara Magar",
           "role": "Team Member",
-          "image": "public/PR and Outreach Team/SAARA MAGAR.png",
+          "image": "/PR and Outreach Team/SAARA MAGAR.png",
           "socials": []
         }
       ]
@@ -379,31 +379,31 @@
         {
           "name": "Jiya Arora",
           "role": "Social Media and Photography Lead",
-          "image": "public/Social Media and Photography Team/Social - JIYA ARORA.png",
+          "image": "/Social Media and Photography Team/Social - JIYA ARORA.png",
           "socials": []
         },
         {
           "name": "Ankita Pal",
           "role": "Social Media and Photography Co-Lead",
-          "image": "public/Social Media and Photography Team/Social - ANKITA PAL.jpeg",
+          "image": "/Social Media and Photography Team/Social - ANKITA PAL.jpeg",
           "socials": []
         },
         {
           "name": "Shashwat Roy",
           "role": "Team Member",
-          "image": "public/Social Media and Photography Team/SHASHWAT ROY.png",
+          "image": "/Social Media and Photography Team/SHASHWAT ROY.png",
           "socials": []
         },
         {
           "name": "Sujal Gupta",
           "role": "Team Member",
-          "image": "public/Social Media and Photography Team/Social - SUJAL GUPTA.jpg",
+          "image": "/Social Media and Photography Team/Social - SUJAL GUPTA.jpg",
           "socials": []
         },
         {
           "name": "Yash Goyal",
           "role": "Team Member",
-          "image": "public/Social Media and Photography Team/YASH GOYAL.png",
+          "image": "/Social Media and Photography Team/YASH GOYAL.png",
           "socials": []
         }
       ]
@@ -414,7 +414,7 @@
         {
           "name": "Ankur Prajapati",
           "role": "Founding Member",
-          "image": "public/Founding Members/Ankur Prajapati.jpg",
+          "image": "/Founding Members/Ankur Prajapati.jpg",
           "socials": [
             {"platform": "linkedin", "url": "https://www.linkedin.com/in/ankur-prajapati-a38b5a251/"}
           ]
@@ -422,7 +422,7 @@
         {
           "name": "Anshuman Ray",
           "role": "Founding Member",
-          "image": "public/Founding Members/Anshuman Ray.png",
+          "image": "/Founding Members/Anshuman Ray.png",
           "socials": [
             {"platform": "linkedin", "url": "https://www.linkedin.com/in/ayushman-ray-16b265251/"}
           ]
@@ -430,7 +430,7 @@
         {
           "name": "Deepesh Kabra",
           "role": "Founding Member",
-          "image": "public/Founding Members/DEEPESH.png",
+          "image": "/Founding Members/DEEPESH.png",
           "socials": [
             {"platform": "linkedin", "url": "https://www.linkedin.com/in/deepesh-kabra-0aa027252/"},
             {"platform": "github", "url": "https://github.com/Deepeshkabra"},
@@ -440,7 +440,7 @@
         {
           "name": "Harsh Jain",
           "role": "Founding Member",
-          "image": "public/Founding Members/Harsh Jain.jpeg",
+          "image": "/Founding Members/Harsh Jain.jpeg",
           "socials": [
             {"platform": "linkedin", "url": "https://www.linkedin.com/in/hjworks17/"},
             {"platform": "github", "url": "https://github.com/Hj-codes"}
@@ -449,7 +449,7 @@
         {
           "name": "Himanshu Gupta",
           "role": "Founding Member",
-          "image": "public/Founding Members/Himanshu Gupta.jpg",
+          "image": "/Founding Members/Himanshu Gupta.jpg",
           "socials": [
             {"platform": "linkedin", "url": "https://www.linkedin.com/in/himanshyou/"},
             {"platform": "github", "url": "https://github.com/himansh-you"}
