@@ -9,7 +9,7 @@ const platforms = [
     {
         name: 'WhatsApp Community',
         icon: '/Icons/Whatsapp_Logo.svg',
-        url: 'https://chat.whatsapp.com/your-link-here'
+        url: 'https://chat.whatsapp.com/DQgyDQcimxoEfvKFRbZtQr'
     },
     {
         name: 'Instagram',
