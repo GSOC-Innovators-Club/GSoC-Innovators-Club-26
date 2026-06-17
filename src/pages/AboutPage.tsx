@@ -12,17 +12,17 @@ interface InfoCardData {
 
 const infoCards: InfoCardData[] = [
     {
-        icon: '/Components/GroupPurpleBG.svg',
+        icon: '/Icons/GroupIcon.svg',
         stat: '50+ Members',
         description: 'A group of highly motivated individuals, determined to make lasting change.'
     },
     {
-        icon: '/Components/GithubPurpleBG.svg',
+        icon: '/Icons/Projects.svg',
         stat: '1+ Projects',
         description: 'Complex and Challenging Open Source Projects.'
     },
     {
-        icon: '/Components/EventsPurpleBG.svg',
+        icon: '/Icons/Calender.svg',
         stat: '1+ Events',
         description: 'Events specifically designed around Open Source.'
     }
