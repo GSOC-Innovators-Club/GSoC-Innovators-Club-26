@@ -1,142 +1,23 @@
 import { TeamMemberCard } from '../components/TeamMemberCard/TeamMemberCard';
+import teamDepartments from '../data/team.json';
 import './TeamPage.css';
 
-// Team data grouped by department
-const departments = [
-    {
-        title: 'Technical',
-        members: [
-            {
-                name: 'John Carmack',
-                role: 'Club President',
-                image: '/Icons/UserPIC.svg',
-                socials: [
-                    { platform: 'github' as const, url: 'https://github.com' },
-                    { platform: 'linkedin' as const, url: 'https://linkedin.com' },
-                    { platform: 'x' as const, url: 'https://x.com' }
-                ]
-            },
-            {
-                name: 'George Hotz',
-                role: 'Technical Lead',
-                image: '/Icons/UserPIC.svg',
-                socials: [
-                    { platform: 'github' as const, url: 'https://github.com' },
-                    { platform: 'linkedin' as const, url: 'https://linkedin.com' },
-                    { platform: 'instagram' as const, url: 'https://instagram.com' }
-                ]
-            },
+type SocialPlatform = 'github' | 'linkedin' | 'instagram' | 'x';
 
-            {
-                name: 'Dennis Ritchie',
-                role: 'Tech Member',
-                image: '/Icons/UserPIC.svg',
-                socials: [
-                    { platform: 'github' as const, url: 'https://github.com' },
-                    { platform: 'x' as const, url: 'https://x.com' }
-                ]
-            },
+interface TeamDepartment {
+    title: string;
+    members: {
+        name: string;
+        role: string;
+        image: string;
+        socials: {
+            platform: SocialPlatform;
+            url: string;
+        }[];
+    }[];
+}
 
-            {
-                name: 'Tom Muller',
-                role: 'Tech Member',
-                image: '/Icons/UserPIC.svg',
-                socials: [
-                    { platform: 'github' as const, url: 'https://github.com' },
-                    { platform: 'x' as const, url: 'https://x.com' }
-                ]
-            }
-        ]
-    },
-    {
-        title: 'Content',
-        members: [
-            {
-                name: 'Chris Nolan',
-                role: 'Content Lead',
-                image: '/Icons/UserPIC.svg',
-                socials: [
-                    { platform: 'linkedin' as const, url: 'https://linkedin.com' },
-                    { platform: 'instagram' as const, url: 'https://instagram.com' }
-                ]
-            },
-            {
-                name: 'Joe Russo',
-                role: 'Content Manager',
-                image: '/Icons/UserPIC.svg',
-                socials: [
-                    { platform: 'linkedin' as const, url: 'https://linkedin.com' },
-                    { platform: 'instagram' as const, url: 'https://instagram.com' },
-                    { platform: 'x' as const, url: 'https://x.com' }
-                ]
-            },
-            {
-                name: 'Peter Jackson',
-                role: 'Content Member',
-                image: '/Icons/UserPIC.svg',
-                socials: [
-                    { platform: 'github' as const, url: 'https://github.com' },
-                    { platform: 'linkedin' as const, url: 'https://linkedin.com' }
-                ]
-            }
-        ]
-    },
-    {
-        title: 'Event Management',
-        members: [
-            {
-                name: 'Stan Lee',
-                role: 'Events Head',
-                image: '/Icons/UserPIC.svg',
-                socials: [
-                    { platform: 'linkedin' as const, url: 'https://linkedin.com' }
-                ]
-            },
-            {
-                name: 'Margret Thatcher',
-                role: 'Coordinator',
-                image: '/Icons/UserPIC.svg',
-                socials: [
-                    { platform: 'x' as const, url: 'https://x.com' }
-                ]
-            }
-        ]
-    },
-    {
-        title: 'Research',
-        members: [
-            {
-                name: 'Dr. Jeff Hinton',
-                role: 'Research Lead',
-                image: '/Icons/UserPIC.svg',
-                socials: [
-                    { platform: 'github' as const, url: 'https://github.com' },
-                    { platform: 'linkedin' as const, url: 'https://linkedin.com' }
-                ]
-            },
-
-            {
-                name: 'Dr. Illya Suts',
-                role: 'Research Co-Lead',
-                image: '/Icons/UserPIC.svg',
-                socials: [
-                    { platform: 'github' as const, url: 'https://github.com' },
-                    { platform: 'linkedin' as const, url: 'https://linkedin.com' }
-                ]
-            },
-
-            {
-                name: 'Dr. Dario Amodei',
-                role: 'Research Co-Lead',
-                image: '/Icons/UserPIC.svg',
-                socials: [
-                    { platform: 'github' as const, url: 'https://github.com' },
-                    { platform: 'linkedin' as const, url: 'https://linkedin.com' }
-                ]
-            }
-        ]
-    }
-];
+const departments = teamDepartments.departments as TeamDepartment[];
 
 export function TeamPage() {
     return (

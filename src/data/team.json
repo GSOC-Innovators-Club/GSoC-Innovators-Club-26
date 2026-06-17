@@ -1,0 +1,461 @@
+{
+  "__documentation": {
+    "note": "Reference only. JSON does not support comments, so this object documents the file structure and should not be rendered.",
+    "departmentStructure": {
+      "title": "Department name",
+      "members": [
+        {
+          "name": "Member full name",
+          "role": "Member role or designation",
+          "image": "/Icons/UserPIC.svg",
+          "socials": [
+            {
+              "platform": "github",
+              "url": "https://github.com"
+            }
+          ]
+        }
+      ]
+    },
+    "memberFields": {
+      "name": "Required string. Display name shown on the card.",
+      "role": "Required string. Role or designation shown below the name.",
+      "image": "Required string. Public asset path for the member image.",
+      "socials": "Required array. Add one object per social profile."
+    },
+    "availableSocialPlatforms": [
+      "github",
+      "linkedin",
+      "instagram",
+      "x"
+    ],
+    "availableSocialIcons": {
+      "github": "/Icons/Github.svg",
+      "linkedin": "/Icons/LinkedIn_Logo.svg",
+      "instagram": "/Icons/Instagram_Logo.svg",
+      "x": "/Icons/X_Logo.svg"
+    },
+    "imageGuidance": "Assets inside public/ are referenced from the site root. Example: public/Icons/UserPIC.svg is used as /Icons/UserPIC.svg.",
+    "entryGuidance": "Add departments inside departments[]. Add members inside the relevant department's members array. Social platform must be one of availableSocialPlatforms."
+  },
+  "departments": [
+    {
+      "title": "Administration",
+      "members": [
+        {
+          "name": "Ashish Raj",
+          "role": "Club President",
+          "image": "/Administration/ASHISH.png",
+          "socials": [
+            { "platform": "linkedin", "url": "https://www.linkedin.com/in/ashish-raj-504760319/" }
+          ]
+        },
+        {
+          "name": "Raunit Kumar Singh",
+          "role": "General Secretary",
+          "image": "/Administration/RAUNIT.png",
+          "socials": []
+        },
+        {
+          "name": "Apoorva Singh",
+          "role": "Assitant General Secretary",
+          "image": "/Administration/Apoorva Singh - EVENT MANGEMENT.png",
+          "socials": []
+        }
+      ]
+    },
+    {
+      "title": "Technical Team",
+      "members": [
+        {
+          "name": "Bindupautra Jyotibrat",
+          "role": "Tech Lead",
+          "image": "/Technical Team/Bindupautra Jyotibrat.jpg",
+          "socials": [
+            { "platform": "github", "url": "https://github.com/jyotibrat" },
+            { "platform": "linkedin", "url": "https://linkedin.com/in/jyotibrat" }
+          ]
+        },
+        {
+          "name": "Abhishek",
+          "role": "Team Member",
+          "image": "/Technical Team/Tech Team - ABHISHEK.jpg",
+          "socials": []
+        },
+        {
+          "name": "Aniket Kumar",
+          "role": "Team Member",
+          "image": "/Technical Team/Tech Team - ANIKET KUMAR.jpg",
+          "socials": []
+        },
+        {
+          "name": "Fatema Saify",
+          "role": "Team Member",
+          "image": "/Technical Team/Tech Team - FATEMA SAIFY.JPG",
+          "socials": []
+        },
+        {
+          "name": "Manvendra Vikram Singh",
+          "role": "Team Member",
+          "image": "/Technical Team/Tech Team - MANVENDRA VIKRAM SINGH.jpg",
+          "socials": []
+        },
+        {
+          "name": "Nikhil Patil",
+          "role": "Team Member",
+          "image": "/Technical Team/Tech Team - Nikhil Patil.jpg",
+          "socials": []
+        },
+        {
+          "name": "Pari Goel",
+          "role": "Team Member",
+          "image": "/Technical Team/Tech Team - PARI GOEL.jpeg",
+          "socials": []
+        },
+        {
+          "name": "Rishi Dewangan",
+          "role": "Team Member",
+          "image": "/Technical Team/Tech Team - RISHI DEWANGAN.png",
+          "socials": []
+        },
+        {
+          "name": "Utkarsh Singh",
+          "role": "Team Member",
+          "image": "/Technical Team/Tech Team - UTKARSH SINGH.jpg",
+          "socials": []
+        },
+        {
+          "name": "Varun Kuswah",
+          "role": "Team Member",
+          "image": "/Technical Team/Tech Team - VARUN KUSWAH.jpg",
+          "socials": []
+        }
+      ]
+    },
+    {
+      "title": "Event Management",
+      "members": [
+        {
+          "name": "Shraddha Sinha",
+          "role": "Event Management Lead",
+          "image": "/Event Management Team/Shraddha Sinha 1- EVENT MANGEMENT.png",
+          "socials": []
+        },
+        {
+          "name": "Ananya Sharma",
+          "role": "Event Management Co-Lead",
+          "image": "/Event Management Team/ANANYA SHARMA - EVENT MANGEMENT.png",
+          "socials": []
+        },
+        {
+          "name": "Abhinav Kumar Mishra",
+          "role": "Team Member",
+          "image": "/Event Management Team/Abhinav Kumar Mishra - EVENT MANGEMENT.png",
+          "socials": []
+        },
+        {
+          "name": "Adhya Sparsh",
+          "role": "Team Member",
+          "image": "/Event Management Team/Adhya Sparsh- event management.png",
+          "socials": []
+        },
+        {
+          "name": "Aashish Prasad",
+          "role": "Team Member",
+          "image": "/Event Management Team/Event - AASHISH PRASAD.jpg",
+          "socials": []
+        },
+        {
+          "name": "Aditi Jha",
+          "role": "Team Member",
+          "image": "/Event Management Team/Event - Aditi Jha.jpg",
+          "socials": []
+        },
+        {
+          "name": "Alankrit Sajwan",
+          "role": "Team Member",
+          "image": "/Event Management Team/Event - Alankrit Sajwan.jpg",
+          "socials": []
+        },
+        {
+          "name": "Aman Mishra",
+          "role": "Team Member",
+          "image": "/Event Management Team/Event - Aman Mishra.png",
+          "socials": []
+        },
+        {
+          "name": "Manasvi Shrivastava",
+          "role": "Team Member",
+          "image": "/Event Management Team/Event - MANASVI SHRIVASTAVA.jpg",
+          "socials": []
+        },
+        {
+          "name": "Rishi Singh Shandilya",
+          "role": "Team Member",
+          "image": "/Event Management Team/Event - Rishi Singh Shandilya.jpg",
+          "socials": []
+        },
+        {
+          "name": "Venya Rajput",
+          "role": "Team Member",
+          "image": "/Event Management Team/Venya Rajput  - EVENT MANGEMENT.png",
+          "socials": []
+        }
+      ]
+    },
+    {
+      "title": "Research",
+      "members": [
+        {
+          "name": "Bindupautra Jyotibrat",
+          "role": "Research Lead",
+          "image": "/Technical Team/Bindupautra Jyotibrat.jpg",
+          "socials": [
+            { "platform": "github", "url": "https://github.com/jyotibrat" },
+            { "platform": "linkedin", "url": "https://linkedin.com/in/jyotibrat" }
+          ]
+        },
+        {
+          "name": "Arun Chaudhary",
+          "role": "Research Co-Lead",
+          "image": "/Research Team/Research - Arun Chaudhary.png",
+          "socials": []
+        },
+        {
+          "name": "Aryan Kumar",
+          "role": "Team Member",
+          "image": "/Research Team/Research - ARYAN KUMAR.jpg",
+          "socials": []
+        },
+        {
+          "name": "Vedant Jain",
+          "role": "Team Member",
+          "socials": []
+        },
+        {
+          "name": "Tanisha Deshpande",
+          "role": "Team Member",
+          "image": "/Research Team/Research Team - Tanisha Deshpande.jpg",
+          "socials": []
+        }
+      ]
+    },
+    {
+      "title": "Content",
+      "members": [
+        {
+          "name": "Shreya Praksh",
+          "role": "Content Lead",
+          "image": "/Content Team/SHREYA PRAKSH - CONTENT TEAM.png",
+          "socials": []
+        },
+        {
+          "name": "Shreyansh Srivastava",
+          "role": "Content Co-Lead",
+          "image": "/Content Team/Content - SHREYANSH SRIVASTAVA.jpg",
+          "socials": []
+        },
+        {
+          "name": "Kanishka Arora",
+          "role": "Team Member",
+          "image": "/Content Team/Content - KANISHKA ARORA.png",
+          "socials": []
+        },
+        {
+          "name": "Riddhi Garg",
+          "role": "Team Member",
+          "image": "/Content Team/Content - Riddhi Garg.jpg",
+          "socials": []
+        },
+        {
+          "name": "Tanisha Sharma",
+          "role": "Team Member",
+          "image": "/Content Team/Content - TANISHA SHARMA.jpg",
+          "socials": []
+        }
+      ]
+    },
+    {
+      "title": "Design",
+      "members": [
+        {
+          "name": "Diya Tanwani",
+          "role": "Design Lead",
+          "image": "/Design Team/Diya tanwani - event mangement.png",
+          "socials": []
+        },
+        {
+          "name": "Vismay Jaiswal",
+          "role": "Design Co-Lead",
+          "image": "/Design Team/Design - VISMAY JAISWAL.jpg",
+          "socials": []
+        },
+        {
+          "name": "Deeksha Kaushal",
+          "role": "Team Member",
+          "image": "/Design Team/Design - Deeksha Kaushal.jpg",
+          "socials": []
+        },
+        {
+          "name": "Varsha Lavania",
+          "role": "Team Member",
+          "image": "/Design Team/Design - VARSHA LAVANIA.jpg",
+          "socials": []
+        }
+      ]
+    },
+    {
+      "title": "Finance",
+      "members": [
+        {
+          "name": "Tejas Tandon",
+          "role": "Finance Lead",
+          "image": "/Finance Team/TEJAS TANDON.png",
+          "socials": []
+        },
+        {
+          "name": "Mishti Singh",
+          "role": "Finance Co-Lead",
+          "image": "/Finance Team/Mishti Singh.png",
+          "socials": []
+        },
+        {
+          "name": "Joydeep Samanta",
+          "role": "Team Member",
+          "image": "/Finance Team/Finance - JOYDEEP SAMANTA.jpg",
+          "socials": []
+        },
+        {
+          "name": "Parth Mulik",
+          "role": "Team Member",
+          "image": "/Finance Team/Finance - PARTH MULIK.jpg",
+          "socials": []
+        },
+        {
+          "name": "Rohit Dubey",
+          "role": "Team Member",
+          "image": "/Finance Team/Finance - Rohit Dubey.jpg",
+          "socials": []
+        }
+      ]
+    },
+    {
+      "title": "Human Resource",
+      "members": [
+        {
+          "name": "Shreya Raj",
+          "role": "Team Member",
+          "image": "/Human Resource Team/Shreya Raj.png",
+          "socials": []
+        }
+      ]
+    },
+    {
+      "title": "PR and Outreach",
+      "members": [
+        {
+          "name": "Atiksh Prasad",
+          "role": "PR and Outreach Lead",
+          "image": "/PR and Outreach Team/PR - ATIKSH PRASAD.png",
+          "socials": []
+        },
+        {
+          "name": "Akshat Pradeep Pillai",
+          "role": "PR and Outreach Co-Lead",
+          "image": "/PR and Outreach Team/PR - AKSHAT PRADEEP PILLAI.jpg",
+          "socials": []
+        },
+        {
+          "name": "Saara Magar",
+          "role": "Team Member",
+          "image": "/PR and Outreach Team/SAARA MAGAR.png",
+          "socials": []
+        }
+      ]
+    },
+    {
+      "title": "Social Media and Photography",
+      "members": [
+        {
+          "name": "Jiya Arora",
+          "role": "Social Media and Photography Lead",
+          "image": "/Social Media and Photography Team/Social - JIYA ARORA.png",
+          "socials": []
+        },
+        {
+          "name": "Ankita Pal",
+          "role": "Social Media and Photography Co-Lead",
+          "image": "/Social Media and Photography Team/Social - ANKITA PAL.jpeg",
+          "socials": []
+        },
+        {
+          "name": "Shashwat Roy",
+          "role": "Team Member",
+          "image": "/Social Media and Photography Team/SHASHWAT ROY.png",
+          "socials": []
+        },
+        {
+          "name": "Sujal Gupta",
+          "role": "Team Member",
+          "image": "/Social Media and Photography Team/Social - SUJAL GUPTA.jpg",
+          "socials": []
+        },
+        {
+          "name": "Yash Goyal",
+          "role": "Team Member",
+          "image": "/Social Media and Photography Team/YASH GOYAL.png",
+          "socials": []
+        }
+      ]
+    },
+    {
+      "title": "Founding Members",
+      "members": [
+        {
+          "name": "Ankur Prajapati",
+          "role": "Founding Member",
+          "image": "/Founding Members/Ankur Prajapati.jpg",
+          "socials": [
+            {"platform": "linkedin", "url": "https://www.linkedin.com/in/ankur-prajapati-a38b5a251/"}
+          ]
+        },
+        {
+          "name": "Anshuman Ray",
+          "role": "Founding Member",
+          "image": "/Founding Members/Anshuman Ray.png",
+          "socials": [
+            {"platform": "linkedin", "url": "https://www.linkedin.com/in/ayushman-ray-16b265251/"}
+          ]
+        },
+        {
+          "name": "Deepesh Kabra",
+          "role": "Founding Member",
+          "image": "/Founding Members/DEEPESH.png",
+          "socials": [
+            {"platform": "linkedin", "url": "https://www.linkedin.com/in/deepesh-kabra-0aa027252/"},
+            {"platform": "github", "url": "https://github.com/Deepeshkabra"},
+            {"platform": "instagram", "url": "https://www.instagram.com/deepesh_kabra/"}
+          ]
+        },
+        {
+          "name": "Harsh Jain",
+          "role": "Founding Member",
+          "image": "/Founding Members/Harsh Jain.jpeg",
+          "socials": [
+            {"platform": "linkedin", "url": "https://www.linkedin.com/in/hjworks17/"},
+            {"platform": "github", "url": "https://github.com/Hj-codes"}
+          ]
+        },
+        {
+          "name": "Himanshu Gupta",
+          "role": "Founding Member",
+          "image": "/Founding Members/Himanshu Gupta.jpg",
+          "socials": [
+            {"platform": "linkedin", "url": "https://www.linkedin.com/in/himanshyou/"},
+            {"platform": "github", "url": "https://github.com/himansh-you"}
+          ]
+        }
+      ]
+    }
+  ]
+}
