@@ -1,5 +1,8 @@
 import React, { useRef, useState } from 'react';
-import './AboutSection.css';
+import { AimSection } from '../components/AimSection/AimSection';
+import { FacultySection } from '../components/FacultySection/FacultySection';
+import { CommunitySection } from '../components/CommunitySection/CommunitySection';
+import './AboutPage.css';
 
 interface InfoCardData {
     icon: string;
@@ -11,17 +14,17 @@ const infoCards: InfoCardData[] = [
     {
         icon: '/Components/GroupPurpleBG.svg',
         stat: '50+ Members',
-        description: 'A group of highly motivated individuals, determined to make lasting change'
+        description: 'A group of highly motivated individuals, determined to make lasting change.'
     },
     {
         icon: '/Components/GithubPurpleBG.svg',
         stat: '1+ Projects',
-        description: 'Complex and Challenging Projects'
+        description: 'Complex and Challenging Open Source Projects.'
     },
     {
         icon: '/Components/EventsPurpleBG.svg',
         stat: '1+ Events',
-        description: 'Events specifically designed around Open Source'
+        description: 'Events specifically designed around Open Source.'
     }
 ];
 
@@ -96,16 +99,21 @@ const SpotlightCard = ({ card }: { card: InfoCardData }) => {
     );
 };
 
-export function AboutSection() {
+export function AboutPage() {
     return (
-        <section className="about-section" id="about">
-            <div className="about-container">
-                {/* Section Title */}
-                <div className="about-title-container" data-reveal>
-                    <h2 className="about-title">
+        <main className="about-page">
+            {/* Background gradient overlay */}
+            <div className="about-bg-gradient">
+                <img src="/Components/Gradient.svg" alt="" aria-hidden="true" />
+            </div>
+
+            <div className="about-page-container">
+                {/* Page Title */}
+                <div className="about-page-header" data-reveal>
+                    <h1 className="about-page-title">
                         About <span className="highlight">Us</span>
-                    </h2>
-                    <p className="about-subtitle">
+                    </h1>
+                    <p className="about-page-subtitle">
                         Make your data invisible by generating unlimited identities.
                         The next-level in privacy protection for online and travel.
                     </p>
@@ -117,7 +125,20 @@ export function AboutSection() {
                         <SpotlightCard key={index} card={card} />
                     ))}
                 </div>
+
+                {/* Expanded Story/Vision Section */}
+                <div className="about-story-section" data-reveal>
+                    <h2 className="about-story-title">Our <span className="highlight">Vision</span></h2>
+                    <p className="about-story-text">
+                        The GSoC Innovators Club is dedicated to fostering a culture of open-source contribution and technical excellence. We bridge the gap between academic learning and real-world software development by preparing students for prestigious programs like Google Summer of Code (GSoC) and other major open-source initiatives. Every line of code matters here.
+                    </p>
+                </div>
             </div>
-        </section>
+
+            {/* Everything else we built */}
+            <AimSection />
+            <FacultySection />
+            <CommunitySection />
+        </main>
     );
 }
