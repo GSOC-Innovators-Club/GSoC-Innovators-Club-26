@@ -9,6 +9,7 @@ import { ModalProvider } from './context/ModalContext';
 import './App.css';
 
 const HomePage = lazy(() => import('./pages/HomePage').then((module) => ({ default: module.HomePage })));
+const AboutPage = lazy(() => import('./pages/AboutPage').then((module) => ({ default: module.AboutPage })));
 const TeamPage = lazy(() => import('./pages/TeamPage').then((module) => ({ default: module.TeamPage })));
 const EventsPage = lazy(() => import('./pages/EventsPage').then((module) => ({ default: module.EventsPage })));
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage').then((module) => ({ default: module.ProjectsPage })));
@@ -25,6 +26,7 @@ function App() {
           <div className="route-content">
               <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutPage />} />
                 <Route path="/team" element={<TeamPage />} />
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/events" element={<EventsPage />} />
@@ -39,4 +41,3 @@ function App() {
 }
 
 export default App;
-

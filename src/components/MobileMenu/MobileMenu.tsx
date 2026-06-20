@@ -6,12 +6,11 @@ interface MobileMenuProps {
     isOpen: boolean;
     onClose: () => void;
 }
-
 const mobileNavLinks = [
     { label: 'Home', href: '/', icon: '/Icons/Home Icon.svg', isRoute: true },
+    { label: 'About Us', href: '/about', icon: '/Icons/Home Icon.svg', isRoute: true }, // ✅ Changed to true and /about
     { label: 'Team', href: '/team', icon: '/Icons/GroupIcon.svg', isRoute: true },
     { label: 'Projects', href: '/projects', icon: '/Icons/Projects.svg', isRoute: true },
-    { label: 'Open Source', href: '/opensource', icon: '/Icons/GSOC-Icon.svg', isRoute: true },
     { label: 'Events', href: '/events', icon: '/Icons/Calender.svg', isRoute: true },
     { label: 'Follow Us', href: '#follow', icon: '/Icons/Social Icon.svg', isRoute: false },
 ];
