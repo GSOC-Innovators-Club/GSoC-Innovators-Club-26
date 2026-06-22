@@ -1,3 +1,34 @@
+/* ===== OPEN SOURCE PAGE ===== */
+.open-source-page {
+    position: relative;
+    min-height: 100vh;
+    background-color: #0e0c15;
+    padding-top: 140px;
+    padding-bottom: 80px;
+    overflow: hidden;
+}
+
+.open-source-bg-gradient {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1400px;
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.8;
+    mix-blend-mode: color-dodge;
+    -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 45%);
+    mask-image: radial-gradient(circle at center, black 30%, transparent 45%);
+}
+
+.open-source-bg-gradient img {
+    width: 100%;
+    height: auto;
+}
+
 .open-source-page-container {
     position: relative;
     z-index: 1;
@@ -41,34 +72,67 @@
     gap: 40px;
 }
 
-.open-source-card {
+/* ===== SPOTLIGHT CARD WITH HIGH TRANSPARENCY ===== */
+.open-source-spotlight-card {
+    position: relative;
     width: 100%;
     max-width: 1200px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
-    padding: 40px;
-    background: linear-gradient(
-        135deg,
-        rgba(0, 0, 0, 0.16) 0%,
-        rgba(83, 84, 108, 0.16) 100%
-    );
-    border: 1.2px solid rgba(16, 17, 50, 0.6);
     border-radius: 20px;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    transition:
-        transform var(--motion-duration-base) ease,
-        border-color var(--motion-duration-base) ease,
-        box-shadow var(--motion-duration-base) ease;
+    background: rgba(255, 255, 255, 0.05); /* Soft outer ring */
+    border: 1.2px solid rgba(16, 17, 50, 0.6);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.open-source-card:hover {
+.open-source-spotlight-card:hover {
     transform: translateY(-5px);
     border-color: rgba(119, 124, 247, 0.4);
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
 }
 
+/* Inner Background Plate - THE TRANSPARENCY EFFECT */
+.open-source-spotlight-card::before {
+    content: "";
+    position: absolute;
+    inset: 1.5px;
+    /* Uses the exact 0.16 transparency you requested */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.16) 0%, rgba(83, 84, 108, 0.16) 100%);
+    border-radius: calc(20px - 1.5px);
+    z-index: 1;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* Interactive Spotlight Layers */
+.open-source-spotlight-border {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    transition: opacity 0.3s ease;
+}
+
+.open-source-spotlight-glow {
+    position: absolute;
+    inset: 1.5px;
+    z-index: 2;
+    border-radius: calc(20px - 1.5px);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Content Container */
+.open-source-spotlight-content {
+    position: relative;
+    z-index: 3; /* Keeps content above the blur layer */
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 40px;
+}
+
+/* Card Internals */
 .open-source-card-header {
     display: flex;
     align-items: center;
@@ -108,7 +172,7 @@
     color: var(--color-text-primary);
 }
 
-.open-source-card-content {
+.open-source-card-content-inner {
     display: flex;
     flex-direction: column;
     gap: 28px;
@@ -125,6 +189,11 @@
     background: rgba(255, 255, 255, 0.035);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
+    transition: background 0.3s ease;
+}
+
+.open-source-spotlight-card:hover .open-source-detail {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .open-source-detail h3 {
@@ -152,7 +221,7 @@
 
 .open-source-description {
     padding: 0;
-    background: transparent;
+    background: transparent !important;
     border: 0;
 }
 
@@ -166,6 +235,7 @@
     font-size: 16px;
     font-weight: 500;
     color: var(--color-text-primary);
+    text-decoration: none;
     transition:
         background-color var(--motion-duration-base) ease,
         transform var(--motion-duration-base) ease,
@@ -178,19 +248,20 @@
     transform: translateY(-2px);
 }
 
-.open-source-card:nth-child(2) {
+/* Staggered Animations */
+.open-source-spotlight-card:nth-child(2) {
     --reveal-delay: 90ms;
 }
 
-.open-source-card:nth-child(3) {
+.open-source-spotlight-card:nth-child(3) {
     --reveal-delay: 180ms;
 }
 
+/* Responsive */
 @media (max-width: 1024px) {
     .open-source-page-title {
         font-size: 48px;
     }
-
     .open-source-meta-grid {
         grid-template-columns: 1fr;
     }
@@ -200,37 +271,29 @@
     .open-source-page-container {
         padding: 0 20px;
     }
-
     .open-source-page-title {
         font-size: 36px;
     }
-
     .open-source-page-subtitle {
         padding: 0 16px;
         font-size: 16px;
     }
-
     .open-source-page-header {
         margin-bottom: 40px;
     }
-
     .open-source-list {
         gap: 32px;
     }
-
-    .open-source-card {
+    .open-source-spotlight-content {
         gap: 24px;
         padding: 24px;
     }
-
     .open-source-card-header {
         align-items: flex-start;
     }
-
     .open-source-event-name {
         font-size: 24px;
     }
-
     .open-source-register-button {
         align-self: stretch;
         text-align: center;

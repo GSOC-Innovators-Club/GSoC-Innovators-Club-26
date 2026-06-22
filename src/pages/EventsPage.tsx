@@ -1,5 +1,5 @@
+import React, { useRef, useState } from 'react';
 import './EventsPage.css';
-import '../components/EventsSection/EventsSection.css';
 
 interface EventData {
     name?: string;
@@ -33,104 +33,142 @@ const events: EventData[] = [
     },
 ];
 
+const EventSpotlightCard = ({ event }: { event: EventData }) => {
+    const divRef = useRef<HTMLDivElement>(null);
+    const [isFocused, setIsFocused] = useState(false);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [opacity, setOpacity] = useState(0);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!divRef.current || isFocused) return;
+        const rect = divRef.current.getBoundingClientRect();
+        setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    };
+
+    return (
+        <article
+            ref={divRef}
+            onMouseMove={handleMouseMove}
+            onFocus={() => { setIsFocused(true); setOpacity(1); }}
+            onBlur={() => { setIsFocused(false); setOpacity(0); }}
+            onMouseEnter={() => setOpacity(1)}
+            onMouseLeave={() => setOpacity(0)}
+            className="event-spotlight-card"
+            data-reveal
+        >
+            {/* Outer border spotlight glow */}
+            <div
+                className="event-spotlight-border"
+                style={{
+                    opacity,
+                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(159, 83, 255, 0.6), transparent 40%)`,
+                }}
+            />
+            {/* Inner background spotlight glow */}
+            <div
+                className="event-spotlight-glow"
+                style={{
+                    opacity,
+                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(159, 83, 255, 0.15), transparent 40%)`,
+                }}
+            />
+
+            <div className="event-card-inner">
+                <div className="event-content">
+                    {/* Timeline Accent Element */}
+                    <div className="event-element">
+                        <div className="event-element-dot">
+                            <div className="event-element-inner-dot" />
+                        </div>
+                        <div className="event-element-line" />
+                    </div>
+
+                    {/* Event Details */}
+                    <div className="event-texts">
+                        <div className="event-header">
+                            <h3 className="event-name">{event.name}</h3>
+                            <div className="event-meta-grid">
+                                <p className="event-meta">
+                                    <img src="/Icons/Calender.svg" alt="" className="meta-icon"/> 
+                                    {event.date}
+                                </p>
+                                <p className="event-meta">
+                                    <img src="/Icons/Home Icon.svg" alt="" className="meta-icon"/> 
+                                    {event.venue}
+                                </p>
+                                <p className="event-meta">
+                                    <img src="/Icons/Event-TickMark.svg" alt="" className="meta-icon"/> 
+                                    {event.time}
+                                </p>
+                            </div>
+                        </div>
+                        
+                        {event.description && (
+                            <p className="event-description">{event.description}</p>
+                        )}
+
+                        <div className="event-social-links">
+                            <a href={event.socialLink} target="_blank" rel="noopener noreferrer" className="event-link-button">
+                                See More
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Event Poster */}
+                <div className="event-poster-wrapper">
+                    {event.posterUrl ? (
+                        <img
+                            src={event.posterUrl}
+                            alt={`${event.name} Poster`}
+                            className="event-poster-image"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    ) : (
+                        <div className="poster-placeholder">Event Poster</div>
+                    )}
+                </div>
+            </div>
+        </article>
+    );
+};
+
 export function EventsPage() {
     return (
-            <main className="events-page">
-                {/* Background gradient overlay */}
-                <div className="events-bg-gradient">
-                    <img src="/Components/Gradient.svg" alt="" aria-hidden="true" />
+        <main className="events-page">
+            {/* Background gradient overlay */}
+            <div className="events-bg-gradient">
+                <img src="/Components/Gradient.svg" alt="" aria-hidden="true" />
+            </div>
+
+            <div className="events-page-container">
+                {/* Page Title */}
+                <div className="events-page-header" data-reveal>
+                    <h1 className="events-page-title">
+                        Our <span className="highlight">Events</span>
+                    </h1>
+                    <p className="events-page-subtitle">
+                        Explore our past and upcoming events. Join us for workshops, hackathons, and more!
+                    </p>
                 </div>
 
-                <div className="events-page-container">
-                    {/* Page Title */}
-                    <div className="events-page-header" data-reveal>
-                        <h1 className="events-page-title">
-                            <span className="highlight">Our Events</span>
-                        </h1>
-                        <p className="events-page-subtitle">
-                            Explore our past and upcoming events. Join us for workshops, hackathons, and more!
-                        </p>
-                    </div>
+                {/* Events List */}
+                <div className="events-list">
+                    {events.map((event, index) => (
+                        <EventSpotlightCard key={index} event={event} />
+                    ))}
 
-                    {/* Events List */}
-                    <div className="events-list">
-                        {events.map((event, index) => (
-                            <article key={index} className="event-card" data-reveal>
-                                <div className="event-card-inner">
-                                    {/* Event Content */}
-                                    <div className="event-content">
-                                        {/* Timeline Element */}
-                                        <div className="event-element">
-                                            <img src="/Icons/Event-DownMark.svg" alt="Event marker" className="event-element-dot" />
-                                            <div className="event-element-line" />
-                                            <div className="event-element-line-bg" />
-                                        </div>
-
-                                        {/* Event Texts */}
-                                        <div className="event-texts">
-                                            <div className="event-header">
-                                                <h3 className="event-name">{event.name}</h3>
-                                                <p className="event-meta">Date: {event.date}</p>
-                                                <p className="event-meta">Venue: {event.venue}</p>
-                                                <p className="event-meta">Time: {event.time}</p>
-                                            </div>
-                                            {event.description && (
-                                                <p className="event-description">{event.description}</p>
-                                            )}
-                                            
-
-                                            <div className="event-social-links">
-                                                <a href={event.socialLink} target="_blank"  className="social-link">
-                                                    <button className="Btn">See More
-                                                        <svg className="svg" viewBox="0 0 512 512">
-                                                        </svg>
-                                                    </button>
-                                                </a>
-                                            </div>
-
-
-                                            {/* <div className="event-highlights">
-                                                <h4 className="agenda-title">Requirements</h4>
-                                                {event.highlights?.map((highlight, hIndex) => (
-                                                    <div key={hIndex} className="event-highlight">
-                                                        <img src="/Icons/Event-TickMark.svg" alt="Check" className="highlight-icon" />
-                                                        <p className="highlight-text">{highlight}</p>
-                                                    </div>
-                                                ))}
-                                            </div> */}
-
-                                        </div>
-                                    </div>
-
-                                    {/* Event Poster */}
-                                    <div className="event-poster">
-                                        {event.posterUrl ? (
-                                            <img
-                                                src={event.posterUrl}
-                                                alt="Event Poster"
-                                                className="poster-image"
-                                                loading="lazy"
-                                                decoding="async"
-                                            />
-                                        ) : (
-                                            <span className="poster-placeholder">Event Poster</span>
-                                        )}
-                                    </div>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
-                    <div className="events-list justify-center">
-                        <div className="event-card upcoming-event" data-reveal>
-                            <div className="event-element">
-                                <img src="/Icons/Event-DownMark.svg" alt="Event marker" className="event-element-dot" />
-                                <div className="event-element-line" />
-                                <div className="event-element-line-bg" />
-                            </div>
-                            <div className="upcoming-event-text">Something Big is Loading.....</div>
-                        </div> 
+                    {/* Upcoming Event Placeholder Styled as a Pill */}
+                    <div className="upcoming-event-pill" data-reveal>
+                        <div className="upcoming-glow"></div>
+                        <span className="upcoming-text">Something Big is Loading.....</span>
                     </div>
                 </div>
-            </main>
+            </div>
+        </main>
     );
 }
