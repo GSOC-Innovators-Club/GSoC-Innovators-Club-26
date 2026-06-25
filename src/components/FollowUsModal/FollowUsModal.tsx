@@ -24,7 +24,12 @@ const platforms = [
     {
         name: 'Discord',
         icon: '/Icons/Discord_Logo.svg',
-        url: 'https://discord.gg/e7bqYG58Y'
+        url: 'https://discord.gg/dJAqk6xCZ'
+    },
+    {
+        name: 'GitHub',
+        icon: '/Icons/Github.svg',
+        url: 'https://github.com/GSOC-Innovators-Club'
     }
 ];
 

@@ -32,7 +32,7 @@ const platforms: PlatformData[] = [
         name: 'Discord',
         cta: 'Chat, collaborate & code together',
         icon: '/Icons/Discord_Logo.svg',
-        url: 'https://discord.gg/e7bqYG58Y'
+        url: 'https://discord.gg/dJAqk6xCZ'
     }
 ];
 

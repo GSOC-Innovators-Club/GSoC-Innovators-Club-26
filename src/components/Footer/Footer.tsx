@@ -3,6 +3,8 @@ import './Footer.css';
 const VitLinks = [
     { name: 'Instagram', icon: '/Icons/Instagram_Logo.svg', url: 'https://www.instagram.com/gsoc_innovators_club/' },
     { name: 'LinkedIn', icon: '/Icons/LinkedIn_Logo.svg', url: 'https://www.linkedin.com/company/gsoc-innovators/' },
+    { name: 'Discord', icon: '/Icons/Discord_Logo.svg', url: 'https://discord.gg/dJAqk6xCZ' },
+    { name: 'GitHub', icon: '/Icons/Github.svg', url: 'https://github.com/GSOC-Innovators-Club' },
 ];
 
 
