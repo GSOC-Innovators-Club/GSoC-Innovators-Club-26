@@ -6,20 +6,19 @@ interface EventData {
     date: string;
     venue: string;
     highlights: string[];
+    image?: string;
+    registerLink?: string;
 }
 
 const events: EventData[] = [
     {
-        name: "Summer of CodeFest'25",
-        date: 'DD/MM/YYYY',
-        venue: 'AB-2 Auditorium',
-        highlights: [
-            'Secrets to Crack GSoC',
-            'Win Tech Quiz for exciting prizes',
-            'Qualify in Hackathon for Trophies, Certificates etc/'
-        ]
+        name: "Summer of CodeFest '26",
+        date: '16/6/2026',
+        venue: 'Online',
+        highlights: [],
+        image: '/Components/SOCF_2026.avif',
+        registerLink: 'https://hackindia.org/2026/summer-of-codesfest-20'
     },
-    
 ];
 
 export function EventsSection() {
@@ -68,12 +67,29 @@ export function EventsSection() {
                                                     </div>
                                                 ))}
                                             </div>
+
+                                            {event.registerLink && (
+                                                <div className="event-register">
+                                                    <a
+                                                        href={event.registerLink}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="btn btn-primary event-register-btn"
+                                                    >
+                                                        Register Now
+                                                    </a>
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
 
                                     {/* Event Poster */}
                                     <div className="event-poster">
-                                        <span className="poster-placeholder">Event Poster</span>
+                                        {event.image ? (
+                                            <img src={event.image} alt={`${event.name} poster`} className="event-poster-img" />
+                                        ) : (
+                                            <span className="poster-placeholder">Event Poster</span>
+                                        )}
                                     </div>
                                 </div>
                             </article>

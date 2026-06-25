@@ -214,9 +214,11 @@
     overflow-x: hidden;
 }
 
-.event-poster img {
-    width: auto;
-    height: auto;
+.event-poster img,
+.event-poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
 }
 
@@ -224,6 +226,16 @@
     font-family: var(--font-body);
     font-size: 18px;
     color: var(--color-text-muted);
+}
+
+/* Register Button */
+.event-register {
+    margin-top: var(--spacing-md);
+}
+
+.event-register-btn {
+    display: inline-block;
+    text-decoration: none;
 }
 
 /* View More */
