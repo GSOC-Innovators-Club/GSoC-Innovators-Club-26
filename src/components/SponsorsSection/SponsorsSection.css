@@ -1,0 +1,229 @@
+/* ============================================================
+   Sponsors Section — Infinite Marquee Scroll
+   ============================================================ */
+
+.sponsors-section {
+  position: relative;
+  padding: 80px 0 96px;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--color-bg-primary) 0%,
+    rgba(144, 124, 255, 0.04) 50%,
+    var(--color-bg-primary) 100%
+  );
+}
+
+/* ── Decorative background glow ── */
+.sponsors-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(144, 124, 255, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 20% 100%, rgba(218, 36, 187, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 100%, rgba(9, 14, 219, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ── Header ── */
+.sponsors-header {
+  text-align: center;
+  margin-bottom: 56px;
+  padding: 0 var(--spacing-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.sponsors-eyebrow {
+  font-family: var(--font-brand);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent-purple);
+  margin-bottom: 12px;
+}
+
+.sponsors-title {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.sponsors-highlight {
+  background: linear-gradient(#008BFF 9%, #FF00B8 99%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sponsors-subtitle {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Marquee Wrapper ── */
+.sponsors-marquee-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+}
+
+/* Fade edges */
+.sponsors-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 180px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.sponsors-fade--left {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--color-bg-primary) 0%,
+    transparent 100%
+  );
+}
+
+.sponsors-fade--right {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--color-bg-primary) 0%,
+    transparent 100%
+  );
+}
+
+/* ── Marquee Row ── */
+.sponsors-marquee {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  mask-image: none; /* fades handled by pseudo-elements above */
+}
+
+.sponsors-track {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  animation: marquee-ltr 40s linear infinite;
+  /* Prevent layout shift during animation */
+  will-change: transform;
+  flex-shrink: 0;
+}
+
+.sponsors-marquee--reverse .sponsors-track {
+  animation: marquee-rtl 36s linear infinite;
+}
+
+/* Pause on hover */
+.sponsors-marquee-wrapper:hover .sponsors-track {
+  animation-play-state: paused;
+}
+
+/* ── Keyframes ── */
+@keyframes marquee-ltr {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-rtl {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* ── Sponsor Card ── */
+.sponsor-card {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 32px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  transition:
+    background var(--motion-duration-base) var(--motion-ease-standard),
+    border-color var(--motion-duration-base) var(--motion-ease-standard),
+    transform var(--motion-duration-base) var(--motion-ease-standard),
+    box-shadow var(--motion-duration-base) var(--motion-ease-standard);
+  cursor: default;
+  min-width: 160px;
+  height: 80px;
+}
+
+.sponsor-card:hover {
+  background: rgba(144, 124, 255, 0.12);
+  border-color: rgba(144, 124, 255, 0.35);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow:
+    0 8px 32px rgba(144, 124, 255, 0.2),
+    0 0 0 1px rgba(144, 124, 255, 0.2);
+}
+
+/* ── Logo Image ── */
+.sponsor-logo {
+  max-height: 44px;
+  max-width: 140px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0.85) grayscale(0.3);
+  transition: filter var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+.sponsor-card:hover .sponsor-logo {
+  filter: brightness(1) grayscale(0);
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .sponsors-track {
+    animation: none !important;
+  }
+
+  .sponsors-marquee-wrapper {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .sponsors-section {
+    padding: 60px 0 72px;
+  }
+
+  .sponsors-header {
+    margin-bottom: 40px;
+    padding: 0 var(--spacing-sm);
+  }
+
+  .sponsor-card {
+    padding: 14px 24px;
+    min-width: 130px;
+    height: 68px;
+  }
+
+  .sponsor-logo {
+    max-height: 36px;
+    max-width: 110px;
+  }
+
+  .sponsors-fade {
+    width: 80px;
+  }
+}
