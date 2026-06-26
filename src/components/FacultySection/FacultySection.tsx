@@ -10,7 +10,7 @@ interface FacultyData {
 const facultyCoordinator: FacultyData = {
     name: 'Dr. Javed Sheikh',
     role: 'Faculty Coordinator',
-    photo: 'https://media.licdn.com/dms/image/v2/C5603AQHKMosEAJEavg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1631019906247?e=1782950400&v=beta&t=doUn9A-w6q4BuaGeMtNX3DxUjO-Dqc2GGeNSUon7QnE',
+    photo: '/Administration/Javed Sheikh.jpg',
 };
 
 const TiltedFacultyCard = ({ data }: { data: FacultyData }) => {

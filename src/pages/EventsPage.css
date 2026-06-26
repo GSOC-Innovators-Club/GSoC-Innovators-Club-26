@@ -244,26 +244,46 @@
     transform: translateY(-2px);
 }
 
+/* Register Now variant */
+.event-register-button {
+    background: linear-gradient(135deg, rgba(159, 83, 255, 0.25), rgba(0, 139, 255, 0.15));
+    border-color: rgba(159, 83, 255, 0.6);
+    color: #e0c8ff;
+    font-weight: 600;
+}
+
+.event-register-button:hover {
+    background: linear-gradient(135deg, rgba(159, 83, 255, 0.45), rgba(0, 139, 255, 0.3));
+    border-color: #9f53ff;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(159, 83, 255, 0.4);
+    transform: translateY(-2px);
+}
+
 /* Poster Section */
 .event-poster-wrapper {
     width: 320px;
+    min-height: 360px;
     flex-shrink: 0;
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(0, 0, 0, 0.3);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .event-poster-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.5s ease;
 }
 
 .event-spotlight-card:hover .event-poster-image {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .poster-placeholder {

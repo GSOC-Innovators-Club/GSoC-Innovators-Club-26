@@ -10,17 +10,19 @@ interface EventData {
     highlights?: string[];
     posterUrl?: string;
     socialLink?: string;
+    registerLink?: string;
 }
 
 const events: EventData[] = [
     {
-        name: "Summer of CodeFest '25",
-        date: 'April 13-14, 2025',
-        venue: 'AB-2 Auditorium',
-        time: '09:00 AM onwards',
-        description: 'This event will have a Seminar and an innovative Hackathon. Learn how to prepare for GSOC and increase your chances of selection. Also compete in a hackathon with peers in building innovative projects.',
-        posterUrl: '/Components/Summer of CodeFest \'25.png',
-        socialLink: 'https://www.linkedin.com/posts/gsoc-innovators_summerofcodefest25-hackathon-coding-activity-7327258229762117632-WQJ1?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEYLyy0BAfljEsrWtQM_6WXPdyr3qIRneoQ',
+        name: "Summer of CodeFest '26",
+        date: 'June 16, 2026',
+        venue: 'Online',
+        time: '12:00 AM onwards',
+        description: 'Summer of CodeFest \'26 is our biggest hackathon yet — and the response has been overwhelming! With 1000+ registrations and counting, developers and innovators from across the country are gearing up to compete, collaborate, and create. Whether you are a first-time hacker or a seasoned builder, this is your stage to solve real-world problems, showcase your skills, and win exciting prizes. Spots are limited — secure yours before it\'s too late!',
+        posterUrl: '/Components/SOCF_2026.avif',
+        socialLink: 'https://hackindia.org/2026/summer-of-codesfest-20',
+        registerLink: 'https://hackindia.org/2026/summer-of-codesfest-20',
     },
     {
         name: "Cinemaghar",
@@ -30,6 +32,15 @@ const events: EventData[] = [
         description: ' Your Wait is Over! We are LIVE with your voted movie Chhichhore. Ab delay kyu? Register karo & apni seat confirm karo!',
         posterUrl: '/Components/Cinemaghar.jpeg',
         socialLink: 'https://www.linkedin.com/posts/gsoc-innovators_opensource-techcommunity-gsocinnovatorsclub-activity-7436354197416984576-43Z_?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEYLyy0BAfljEsrWtQM_6WXPdyr3qIRneoQ',
+    },
+    {
+        name: "Summer of CodeFest '25",
+        date: 'April 13-14, 2025',
+        venue: 'AB-2 Auditorium',
+        time: '09:00 AM onwards',
+        description: 'This event will have a Seminar and an innovative Hackathon. Learn how to prepare for GSOC and increase your chances of selection. Also compete in a hackathon with peers in building innovative projects.',
+        posterUrl: '/Components/Summer of CodeFest \'25.png',
+        socialLink: 'https://www.linkedin.com/posts/gsoc-innovators_summerofcodefest25-hackathon-coding-activity-7327258229762117632-WQJ1?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEYLyy0BAfljEsrWtQM_6WXPdyr3qIRneoQ',
     },
 ];
 
@@ -108,8 +119,8 @@ const EventSpotlightCard = ({ event }: { event: EventData }) => {
                         )}
 
                         <div className="event-social-links">
-                            <a href={event.socialLink} target="_blank" rel="noopener noreferrer" className="event-link-button">
-                                See More
+                            <a href={event.registerLink ?? event.socialLink} target="_blank" rel="noopener noreferrer" className={`event-link-button${event.registerLink ? ' event-register-button' : ''}`}>
+                                {event.registerLink ? 'Register Now' : 'See More'}
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
@@ -163,10 +174,10 @@ export function EventsPage() {
                     ))}
 
                     {/* Upcoming Event Placeholder Styled as a Pill */}
-                    <div className="upcoming-event-pill" data-reveal>
+                    {/* <div className="upcoming-event-pill" data-reveal>
                         <div className="upcoming-glow"></div>
                         <span className="upcoming-text">Something Big is Loading.....</span>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </main>
