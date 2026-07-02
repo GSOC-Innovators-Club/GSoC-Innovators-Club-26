@@ -1,146 +1,219 @@
-# GSoC Innovators Club - Frontend
+# GSoC Innovators Club Website
+
+<div align="center">
+
+![Next.js](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?style=for-the-badge&logo=vercel)
+
+Official website of the **GSoC Innovators Club**, VIT Bhopal University.
+
+**Live Website:** https://gsoc-innovators-club-vitb.vercel.app/
+
+</div>
 
 ---
 
-## React + TypeScript + Vite
+## About
+
+The **GSoC Innovators Club** is a student-driven technical community at **VIT Bhopal University** dedicated to fostering innovation, open-source development, hackathons, competitive programming, and collaborative learning.
+
+This repository contains the source code for the club's official website, designed to showcase:
+
+- Club information
+- Team members
+- Projects
+- Events
+- Sponsors
+- Open Source initiatives
+- Contact information
 
 ---
 
-A modern, immersive landing page for the GSoC Innovators Club, designed to attract and engage passionate developers.
+## Features
 
-## 🚀 Features
+- Responsive design
+- Modern user interface
+- Team showcase
+- Projects section
+- Events section
+- Sponsors section
+- Open Source page
+- Smooth scroll animations
+- Mobile navigation
+- Optimized performance
 
-- **Immersive 3D Hero Section**: A stunning Three.js nebula cloud animation that serves as the background for the landing page.
-- **Scroll-Hijacking Animation**: A custom camera transition that shifts the view from a front-facing perspective to a top-down view as the user scrolls, creating a "zoom-in" effect.
-- **Dynamic UI Elements**: Text content and floating cards in the hero section fade out smoothly as the scroll animation progresses.
-- **About Us Section**: Informative cards with statistics and custom purple-themed icons.
-- **Events Section**: Clean and modern display of upcoming events and challenges.
-- **Team Page**: A dedicated page showcasing the team members, grouped by department.
-- **Events Page**: A full page displaying past and upcoming events in a vertical timeline.
-- **Client-Side Routing**: Seamless navigation between pages using React Router.
-- **Responsive Design**: Fully responsive layout that adapts to different screen sizes.
+---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **React 19**: Modern component-based architecture.
-- **Vite**: Frontend tool.
-- **TypeScript**: Static typing.
-- **Three.js**: Powerful 3D library for web graphics.
-- **Vanilla CSS**: Custom styling.
+| Category | Technology |
+|-----------|------------|
+| Frontend | React |
+| Language | TypeScript |
+| Build Tool | Vite |
+| Styling | CSS |
+| Deployment | Vercel |
 
-## 📁 Project Structure
+---
+
+## Project Structure
 
 ```text
-src/
-├── components/
-│   ├── AboutSection/     # About Us cards and info
-│   ├── EventsSection/    # Events list and styling
-│   ├── Footer/          # Multi-column footer with branding
-│   ├── Header/          # Sticky navigation bar
-│   ├── HeroSection/     # Three.js Nebula, scroll hook, and hero content
-│   └── TeamMemberCard/  # Reusable card component for team members
-├── pages/
-│   ├── EventsPage.tsx   # Dedicated Events page
-│   ├── HomePage.tsx     # Main landing page
-│   └── TeamPage.tsx     # Team overview page
-├── App.tsx              # Main application entry point with Routing
-├── main.tsx             # React DOM mounting
-└── index.css            # Global design tokens and base styles
+.
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── AimSection/
+│   │   ├── CommunitySection/
+│   │   ├── EventsSection/
+│   │   ├── FacultySection/
+│   │   ├── FollowUsModal/
+│   │   ├── Footer/
+│   │   ├── Header/
+│   │   ├── HeroSection/
+│   │   ├── MobileMenu/
+│   │   ├── OpenSourceEvents/
+│   │   ├── PageLoader/
+│   │   ├── ScrollReveal/
+│   │   ├── SponsorsSection/
+│   │   ├── TeamMemberCard/
+│   │   ├── RevealOnScroll.tsx
+│   │   └── ScrollToTop.tsx
+│   │
+│   ├── context/
+│   │   ├── modal-context.ts
+│   │   ├── ModalContext.tsx
+│   │   └── useModal.ts
+│   │
+│   ├── data/
+│   ├── hooks/
+│   │
+│   ├── pages/
+│   │   ├── AboutPage.tsx
+│   │   ├── AboutPage.css
+│   │   ├── EventsPage.tsx
+│   │   ├── EventsPage.css
+│   │   ├── HomePage.tsx
+│   │   ├── openSourcePage.tsx
+│   │   ├── openSourcePage.css
+│   │   ├── ProjectsPage.tsx
+│   │   ├── ProjectsPage.css
+│   │   ├── TeamPage.tsx
+│   │   └── TeamPage.css
+│   │
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.tsx
+│
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+├── tsconfig.app.json
+├── tsconfig.node.json
+└── vite.config.ts
 ```
-
-## 🛠️ Getting Started
-
-1. **Clone the Repository**
-2. **Install Dependencies**:
-  
-   ```bash
-    npm install
-    ```
-
-3. **Run Development Server**:
-  
-  ```bash
-    npm run dev
-  ```
-
-1. **Build for Production**:
-  
-  ```bash
-  npm run build
-  ```
 
 ---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Getting Started
 
-Currently, two official plugins are available:
+### Clone the repository
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## 📜 Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/GSOC-Innovators-Club/GSoC-Innovators-Club-26.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Navigate to the project
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd GSoC-Innovators-Club-26
 ```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start the development server
+
+```bash
+npm run dev
+```
+
+The application will be available at:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+---
+
+## Preview Production Build
+
+```bash
+npm run preview
+```
+
+---
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch.
+
+```bash
+git checkout -b feature/your-feature
+```
+
+3. Commit your changes.
+
+```bash
+git commit -m "Add your feature"
+```
+
+4. Push to your branch.
+
+```bash
+git push origin feature/your-feature
+```
+
+5. Open a Pull Request.
+
+---
+
+## Future Improvements
+
+- Admin dashboard
+- Event registration
+- Blog section
+- Gallery
+- Newsletter integration
+- CMS support
+- Improved accessibility
+
+---
+
+## Contact
+
+For suggestions or contributions, feel free to open an issue or submit a pull request.
+
+---
+
+## License
+
+This project is licensed under the MIT License unless stated otherwise.
