@@ -205,4 +205,4 @@ For suggestions or contributions, feel free to open an issue or submit a pull re
 
 ## License
 
-This project is licensed under the MIT License unless stated otherwise.
+This project is licensed under the [MIT License](LICENSE) unless stated otherwise.
