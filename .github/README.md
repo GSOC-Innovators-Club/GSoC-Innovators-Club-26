@@ -205,4 +205,4 @@ For suggestions or contributions, feel free to open an issue or submit a pull re
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE) unless stated otherwise.
+This project is licensed under the [MIT License](https://github.com/GSOC-Innovators-Club/GSoC-Innovators-Club-26/tree/dev?tab=MIT-1-ov-file) unless stated otherwise.
