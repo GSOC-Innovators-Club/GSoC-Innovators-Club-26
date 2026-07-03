@@ -1,15 +1,17 @@
-# GSoC Innovators Club Website
-
 <div align="center">
 
-![Next.js](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)
+<h1>
+GSoC Innovators Club Website
+</h1>
+
+![React 18](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?style=for-the-badge&logo=vercel)
 
 Official website of the **GSoC Innovators Club**, VIT Bhopal University.
 
-**Live Website:** https://gsoc-innovators-club-vitb.vercel.app/
+**Live Website:** **https://gsoc-innovators-club-vitb.vercel.app/**
 
 </div>
 
@@ -48,13 +50,13 @@ This repository contains the source code for the club's official website, design
 
 ## Tech Stack
 
-| Category | Technology |
-|-----------|------------|
-| Frontend | React |
-| Language | TypeScript |
-| Build Tool | Vite |
-| Styling | CSS |
-| Deployment | Vercel |
+| Category   | Technology |
+|------------|------------|
+| Frontend   | React      |
+| Language   | TypeScript |
+| Build Tool | Vite       |
+| Styling    | CSS        |
+| Deployment | Vercel     |
 
 ---
 
@@ -76,7 +78,6 @@ This repository contains the source code for the club's official website, design
 │   │   ├── MobileMenu/
 │   │   ├── OpenSourceEvents/
 │   │   ├── PageLoader/
-│   │   ├── ScrollReveal/
 │   │   ├── SponsorsSection/
 │   │   ├── TeamMemberCard/
 │   │   ├── RevealOnScroll.tsx
@@ -88,7 +89,6 @@ This repository contains the source code for the club's official website, design
 │   │   └── useModal.ts
 │   │
 │   ├── data/
-│   ├── hooks/
 │   │
 │   ├── pages/
 │   │   ├── AboutPage.tsx
@@ -111,10 +111,11 @@ This repository contains the source code for the club's official website, design
 ├── .gitignore
 ├── eslint.config.js
 ├── index.html
-├── package.json
 ├── package-lock.json
-├── tsconfig.json
+├── package.json
+├── README.md
 ├── tsconfig.app.json
+├── tsconfig.json
 ├── tsconfig.node.json
 └── vite.config.ts
 ```
@@ -193,18 +194,6 @@ git push origin feature/your-feature
 ```
 
 5. Open a Pull Request.
-
----
-
-## Future Improvements
-
-- Admin dashboard
-- Event registration
-- Blog section
-- Gallery
-- Newsletter integration
-- CMS support
-- Improved accessibility
 
 ---
 
